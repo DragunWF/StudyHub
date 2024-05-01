@@ -1,6 +1,9 @@
 package com.example.studyhub;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.studyhub.utils.Utils;
+
 public class LogInActivity extends AppCompatActivity {
+    private EditText username;
+    private EditText password;
+    private Button loginBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +29,31 @@ public class LogInActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        username = findViewById(R.id.inputUsername);
+        password = findViewById(R.id.inputPassword);
+
+        loginBtn = findViewById(R.id.logInBtn);
+        loginBtn.setOnClickListener(v -> {
+            if (isInputValid()) {
+                startActivity(new Intent(LogInActivity.this, MainActivity.class));
+            }
+        });
+    }
+
+    private boolean isInputValid() {
+        if (Utils.getString(username).isEmpty()) {
+            toast("Username cannot be empty!");
+            return false;
+        }
+        if (Utils.getString(password).isEmpty()) {
+            toast("Password cannot be empty!");
+            return false;
+        }
+        return true;
+    }
+
+    private void toast(String message) {
+        Utils.toast(this, message);
     }
 }
