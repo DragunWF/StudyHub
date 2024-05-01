@@ -67,6 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean isInputValid() {
         final int PASSWORD_CHAR_LIMIT = 8;
 
+        // Forgive me father for I have sinned...
         if (Utils.getString(username).isEmpty()) {
             toast("Username cannot be empty!");
             return false;
