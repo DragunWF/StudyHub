@@ -1,4 +1,4 @@
-package com.example.studyhub;
+package com.example.studyhub.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.studyhub.MainActivity;
+import com.example.studyhub.R;
 import com.example.studyhub.utils.Utils;
 
 public class SignUpActivity extends AppCompatActivity {

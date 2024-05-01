@@ -13,13 +13,13 @@
         android:theme="@style/Theme.StudyHub"
         tools:targetApi="31">
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LogInActivity"
+            android:name=".activities.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".LandingPage"
+            android:name=".activities.LandingPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
