@@ -14,6 +14,6 @@ public class Utils {
     }
 
     public static boolean isEmpty(EditText text) {
-        return String.valueOf(text.getText()).isEmpty();
+        return Utils.getString(text).isEmpty();
     }
 }
