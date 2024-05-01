@@ -96,7 +96,7 @@ public class SignUpActivity extends AppCompatActivity {
             return false;
         }
         if (!studentBtn.isChecked() && !tutorBtn.isChecked()) {
-            toast("Please select an account type! Either Student or Tutor.")
+            toast("Please select an account type! Either Student or Tutor.");
             return false;
         }
 
