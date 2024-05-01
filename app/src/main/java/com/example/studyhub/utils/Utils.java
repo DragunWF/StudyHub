@@ -12,4 +12,8 @@ public class Utils {
     public static String getString(EditText text) {
         return String.valueOf(text.getText());
     }
+
+    public static boolean isEmpty(EditText text) {
+        return String.valueOf(text.getText()).isEmpty();
+    }
 }
