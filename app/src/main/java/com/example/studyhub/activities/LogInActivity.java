@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,9 @@ import com.example.studyhub.utils.Utils;
 public class LogInActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
+
     private Button loginBtn;
+    private TextView registerTextBtn;
 
 
     @Override
@@ -35,11 +38,17 @@ public class LogInActivity extends AppCompatActivity {
         username = findViewById(R.id.inputUsername);
         password = findViewById(R.id.inputPassword);
 
+
         loginBtn = findViewById(R.id.logInBtn);
+        registerTextBtn = findViewById(R.id.notRegisteredText);
+
         loginBtn.setOnClickListener(v -> {
             if (isInputValid()) {
                 startActivity(new Intent(LogInActivity.this, MainActivity.class));
             }
+        });
+        registerTextBtn.setOnClickListener(v -> {
+            startActivity(new Intent(LogInActivity.this, MainActivity.class));
         });
     }
 
