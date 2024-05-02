@@ -3,6 +3,7 @@ package com.example.studyhub.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -20,7 +21,6 @@ public class LandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_landing_page);
-
         loginBtn = findViewById(R.id.landingLogInBtn);
         registerBtn = findViewById(R.id.landingSignUpBtn);
 

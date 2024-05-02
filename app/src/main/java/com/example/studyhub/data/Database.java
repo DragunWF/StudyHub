@@ -56,7 +56,7 @@ public class Database extends SQLiteOpenHelper {
 
         db.execSQL(subscriptionTbl);
         db.execSQL(userTbl);
-        Log.d("Database", "OnCreate: Database has been created");
+        db.close();
     }
 
     /*@Override
