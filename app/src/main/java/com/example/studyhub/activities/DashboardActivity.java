@@ -1,4 +1,4 @@
-package com.example.studyhub;
+package com.example.studyhub.activities;
 
 import android.os.Bundle;
 
@@ -8,7 +8,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Dashboard extends AppCompatActivity {
+import com.example.studyhub.R;
+
+public class DashboardActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
