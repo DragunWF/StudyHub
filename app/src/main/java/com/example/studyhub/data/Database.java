@@ -3,6 +3,7 @@ package com.example.studyhub.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -41,26 +42,28 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String userTbl = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
+        String subscriptionTbl = String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
+                        ", %s TEXT NOT NULL, %s TEXT NOT NULL)"
+                         , SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK, NAME, DESCRIPTION_SUB);
+
+        String userTbl = String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
                                        ", %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL" +
                                        ", %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL" +
-                                       ", %s TEXT, %s TEXT, %s INTEGER NOT NULL, FOREIGN KEY (%s) REFERENCES %s(%s)"
+                                       ", %s TEXT, %s TEXT, %s INTEGER NOT NULL, FOREIGN KEY (%s) REFERENCES %s(%s))"
                                         , USER_TBL, USER_ID, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME
                                         , COURSE, EMAIL, MOBILE_NUMBER, USER_TYPE, DESCRIPTION_USER
                                         , FRIENDS, SUBSCRIPTION_ID_FK, SUBSCRIPTION_ID_FK, SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK);
 
-        String subscriptionTbl = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
-                                               ", %s TEXT NOT NULL, %s TEXT NOT NULL)"
-                                                , SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK, NAME, DESCRIPTION_SUB);
         db.execSQL(subscriptionTbl);
         db.execSQL(userTbl);
+        Log.d("Database", "OnCreate: Database has been created");
     }
 
-    @Override
+    /*@Override
     public void onConfigure(SQLiteDatabase db) {
         super.onConfigure(db);
         db.execSQL("PRAGMA foreign_keys = ON;");
-    }
+    }*/
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
