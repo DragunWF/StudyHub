@@ -8,6 +8,11 @@ import androidx.annotation.Nullable;
 
 public class Database extends SQLiteOpenHelper {
 
+    //----------------------TABLE-NAMES-------------------------\\
+    private final String USER_TBL = "user_tbl";
+    private final String SUBSCRIPTION_TBL = "subscription_tbl";
+    //----------------------TABLE-NAMES-------------------------\\
+
     //----------------------USER-FIELDS-------------------------\\
     private final String USER_ID = "user_id";
     private final String USERNAME = "username";
@@ -30,13 +35,31 @@ public class Database extends SQLiteOpenHelper {
     //--------------------SUBSCRIPTION-FIELDS-----------------------\\
 
 
-    public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public Database(@Nullable Context context) {
+        super(context, "study_hub.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String userTbl = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
+                                       ", %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL" +
+                                       ", %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL, %s TEXT NOT NULL" +
+                                       ", %s TEXT, %s TEXT, %s INTEGER NOT NULL, FOREIGN KEY (%s) REFERENCES %s(%s)"
+                                        , USER_TBL, USER_ID, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME
+                                        , COURSE, EMAIL, MOBILE_NUMBER, USER_TYPE, DESCRIPTION_USER
+                                        , FRIENDS, SUBSCRIPTION_ID_FK, SUBSCRIPTION_ID_FK, SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK);
 
+        String subscriptionTbl = String.format("CREATE TABLE %s (%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
+                                               ", %s TEXT NOT NULL, %s TEXT NOT NULL)"
+                                                , SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK, NAME, DESCRIPTION_SUB);
+        db.execSQL(subscriptionTbl);
+        db.execSQL(userTbl);
+    }
+
+    @Override
+    public void onConfigure(SQLiteDatabase db) {
+        super.onConfigure(db);
+        db.execSQL("PRAGMA foreign_keys = ON;");
     }
 
     @Override
