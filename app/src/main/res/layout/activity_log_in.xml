@@ -1,41 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loginbase"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#181818"
-    android:clipToOutline="true" >
+     >
 
     <View
         android:id="@+id/logInCardContainter"
         android:layout_width="wrap_content"
-        android:layout_height="494dp"
+        android:layout_height="507dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="187dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="233dp"
+        android:layout_marginBottom="220dp"
         android:background="@drawable/login_form_cardcontainer" />
-
-    <ImageView
-        android:id="@+id/loginProfile"
-        android:layout_width="167dp"
-        android:layout_height="152dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="228dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="534dp"
-        app:srcCompat="@drawable/profile" />
 
     <ImageView
         android:id="@+id/loginLogo"
@@ -51,80 +37,84 @@
         android:layout_marginBottom="731dp"
         app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/inputUsername"
-        android:layout_width="268dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="417dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="449dp"
-        android:background="@drawable/input_username"
-        android:ems="10"
-        android:fontFamily="@font/inria_light"
-        android:forceHasOverlappingRendering="false"
-        android:inputType="text"
-        android:textAlignment="center" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/inputPassword"
-        android:layout_width="268dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="476dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="390dp"
-        android:background="@drawable/input_password"
-        android:ems="10"
-        android:fontFamily="@font/inria_light"
-        android:forceHasOverlappingRendering="false"
-        android:inputType="textPassword"
-        android:textAlignment="center" />
+        <ImageView
+            android:id="@+id/loginProfile"
+            android:layout_width="167dp"
+            android:layout_height="152dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.313"
+            app:srcCompat="@drawable/profile" />
 
-    <Button
-        android:id="@+id/logInBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="565dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="298dp"
-        android:background="@drawable/login_btn"
-        android:fontFamily="@font/inria_bold"
-        android:text="LOG IN"
-        android:textSize="21sp" />
+        <EditText
+            android:id="@+id/inputUsername"
+            android:layout_width="268dp"
+            android:layout_height="48dp"
+            android:background="@drawable/input_username"
+            android:ems="10"
+            android:fontFamily="@font/inria_light"
+            android:forceHasOverlappingRendering="false"
+            android:inputType="text"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.486" />
 
-    <TextView
-        android:id="@+id/notRegisteredText"
-        android:layout_width="119dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="146dp"
-        android:layout_marginLeft="146dp"
-        android:layout_marginTop="628dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="267dp"
-        android:fontFamily="@font/inria_light"
-        android:gravity="top"
-        android:text="Not registered yet?"
-        android:textColor="#EE0909"
-        android:textSize="14sp" />
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="266dp"
+            android:layout_height="49dp"
+            android:background="@drawable/input_password"
+            android:ems="10"
+            android:fontFamily="@font/inria_light"
+            android:forceHasOverlappingRendering="false"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.554" />
+
+        <Button
+            android:id="@+id/logInBtn"
+            android:layout_width="267dp"
+            android:layout_height="54dp"
+            android:background="@drawable/login_btn"
+            android:fontFamily="@font/inria_bold"
+            android:text="LOG IN"
+            android:textSize="21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.652" />
+
+        <TextView
+            android:id="@+id/notRegisteredText"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inria_light"
+            android:gravity="top"
+            android:text="Not registered yet?"
+            android:textColor="#EE0909"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.698" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
 
