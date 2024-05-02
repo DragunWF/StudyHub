@@ -1,5 +1,6 @@
 package com.example.studyhub.data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -68,5 +69,21 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void addUser(Users user) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(USERNAME, user.getUsername());
+        cv.put(PASSWORD, user.getPassword());
+        cv.put(FIRST_NAME, user.getFirstName());
+        cv.put(LAST_NAME, user.getLastName());
+        cv.put(COURSE, user.getCourse());
+        cv.put(EMAIL, user.getEmail());
+        cv.put(MOBILE_NUMBER, user.getMobileNumber());
+        cv.put(USER_TYPE, user.getUserType());
+
+        db.insert(USER_TBL, null, cv);
     }
 }

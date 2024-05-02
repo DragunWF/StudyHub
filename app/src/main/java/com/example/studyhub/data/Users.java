@@ -9,12 +9,12 @@ public class Users {
     private String course;
     private String email;
     private String mobileNumber;
-    private String user_type;
+    private String userType;
     private String description;
     private String friends;
     private int subscriptionID;
 
-    public Users(int userID, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String user_type, String description, String friends, int subscriptionID) {
+    public Users(int userID, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionID) {
         this.userID = userID;
         this.username = username;
         this.password = password;
@@ -23,7 +23,7 @@ public class Users {
         this.course = course;
         this.email = email;
         this.mobileNumber = mobileNumber;
-        this.user_type = user_type;
+        this.userType = userType;
         this.description = description;
         this.friends = friends;
         this.subscriptionID = subscriptionID;
@@ -97,12 +97,12 @@ public class Users {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getUser_type() {
-        return user_type;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setUser_type(String user_type) {
-        this.user_type = user_type;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     public String getDescription() {
