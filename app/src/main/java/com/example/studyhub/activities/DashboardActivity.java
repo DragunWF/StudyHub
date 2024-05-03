@@ -1,6 +1,10 @@
 package com.example.studyhub.activities;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.Spinner;
@@ -14,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,9 +27,10 @@ import java.util.List;
 public class DashboardActivity extends AppCompatActivity {
     private ImageView profileIcon;
     private SearchView searchBar;
+    private Button findStudyBuddyBtn;
 
     private Spinner userTypeSpinner;
-    private List<String> userTypeChoices = Arrays.asList("Student", "Tutor");
+    private List<String> userTypeChoices = Arrays.asList("Any", "Student", "Tutor");
 
     private Spinner courseSpinner;
     private List<String> courseChoices = new ArrayList<>();
@@ -32,6 +38,7 @@ public class DashboardActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager recyclerLayoutManager;
     private RecyclerView.Adapter recyclerAdapter;
+    private List<User> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +53,13 @@ public class DashboardActivity extends AppCompatActivity {
 
         profileIcon = findViewById(R.id.profileIconDashboard);
         searchBar = findViewById(R.id.searchBarDashboard);
+        findStudyBuddyBtn = findViewById(R.id.findBuddyBtn);
 
+        findStudyBuddyBtn.setOnClickListener(v -> {
+            // startActivity(new Intent(DashboardActivity.this, FindBuddyActivity.class));
+        });
         profileIcon.setOnClickListener(v -> {
-            // startActivity(DashboardActivity.this, ProfileActivity.class);
+            // startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
         });
 
         setRecyclerView();
@@ -68,5 +79,40 @@ public class DashboardActivity extends AppCompatActivity {
     private void setSpinners() {
         userTypeSpinner = findViewById(R.id.userTypeSpinner);
         courseSpinner = findViewById(R.id.courseSpinner);
+
+        ArrayAdapter<String> userTypeAdapter = new ArrayAdapter<>(
+                this, android.R.layout.simple_spinner_item, userTypeChoices
+        );
+        ArrayAdapter<String> courseAdapter = new ArrayAdapter<>(
+                this, android.R.layout.simple_spinner_item, courseChoices
+        );
+
+        userTypeAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        userTypeSpinner.setAdapter(userTypeAdapter);
+        courseAdapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        courseSpinner.setAdapter(courseAdapter);
+
+        userTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        courseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }
