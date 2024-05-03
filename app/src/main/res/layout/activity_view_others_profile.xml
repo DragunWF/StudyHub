@@ -8,21 +8,6 @@
     android:background="#181818"
     tools:context=".ViewOthersProfileActivity">
 
-    <TextView
-        android:id="@+id/viewOthersUsernameHeader"
-        android:layout_width="227dp"
-        android:layout_height="59dp"
-        android:fontFamily="@font/inria_reg"
-        android:text="@string/username"
-        android:textColor="#FFFFFF"
-        android:textSize="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031" />
-
     <ImageView
         android:id="@+id/viewOthersBackBtn"
         android:layout_width="68dp"
@@ -342,6 +327,17 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.859"
                     app:srcCompat="@drawable/add_buddy_icon" />
+
+                <TextView
+                    android:id="@+id/viewOthersUsernameHeader"
+                    android:layout_width="333dp"
+                    android:layout_height="58dp"
+                    android:fontFamily="@font/inria_reg"
+                    android:text="@string/username"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48dp"
+                    tools:layout_editor_absoluteX="137dp"
+                    tools:layout_editor_absoluteY="35dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
