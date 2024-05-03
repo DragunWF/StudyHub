@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     //----------------------TABLE-NAMES-------------------------\\
     private final String USER_TBL = "user_tbl";
@@ -40,7 +40,7 @@ public class Database extends SQLiteOpenHelper {
     //--------------------SUBSCRIPTION-FIELDS-----------------------\\
 
 
-    public Database(@Nullable Context context) {
+    public DatabaseHelper(@Nullable Context context) {
         super(context, "study_hub.db", null, 1);
     }
 

@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.MainActivity;
 import com.example.studyhub.R;
-import com.example.studyhub.data.Database;
+import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.User;
 import com.example.studyhub.utils.Utils;
 
