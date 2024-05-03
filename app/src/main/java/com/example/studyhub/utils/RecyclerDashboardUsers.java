@@ -86,7 +86,7 @@ public class RecyclerDashboardUsers extends RecyclerView.Adapter<RecyclerDashboa
         // contents of the view with that element
 
         User user = userList.get(position);
-        viewHolder.getName().setText(String.format("Name: %s %s", user.getFirstName(), user.getLastName()));
+        viewHolder.getName().setText("Name: " + user.getFullName());
         viewHolder.getCourse().setText("Course: " + user.getCourse());
         viewHolder.getAccType().setText("Acc. Type: " + user.getUserType());
         viewHolder.getViewProfileBtn().setOnClickListener(v -> {
