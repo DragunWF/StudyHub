@@ -17,8 +17,7 @@ public class User {
     private String friends;
     private int subscriptionId;
 
-    public User(int userId, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionId) {
-        this.userId = userId;
+    public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -27,9 +26,6 @@ public class User {
         this.email = email;
         this.mobileNumber = mobileNumber;
         this.userType = userType;
-        this.description = description;
-        this.friends = friends;
-        this.subscriptionId = subscriptionId;
     }
 
     public User() {
