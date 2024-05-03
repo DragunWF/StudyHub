@@ -1,12 +1,12 @@
 package com.example.studyhub.data;
 
 public class Subscription {
-    private int subscriptionID;
+    private int subscriptionId;
     private String name;
     private String description;
 
-    public Subscription(int subscriptionID, String name, String description) {
-        this.subscriptionID = subscriptionID;
+    public Subscription(int subscriptionId, String name, String description) {
+        this.subscriptionId = subscriptionId;
         this.name = name;
         this.description = description;
     }
@@ -15,12 +15,8 @@ public class Subscription {
 
     }
 
-    public int getSubscriptionID() {
-        return subscriptionID;
-    }
-
-    public void setSubscriptionID(int subscriptionID) {
-        this.subscriptionID = subscriptionID;
+    public int getSubscriptionId() {
+        return subscriptionId;
     }
 
     public String getName() {

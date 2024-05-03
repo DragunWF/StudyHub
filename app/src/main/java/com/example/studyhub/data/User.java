@@ -1,7 +1,7 @@
 package com.example.studyhub.data;
 
 public class User {
-    private int userID;
+    private int userId;
     private String username;
     private String password;
     private String firstName;
@@ -12,10 +12,10 @@ public class User {
     private String userType;
     private String description;
     private String friends;
-    private int subscriptionID;
+    private int subscriptionId;
 
-    public User(int userID, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionID) {
-        this.userID = userID;
+    public User(int userId, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionId) {
+        this.userId = userId;
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -26,19 +26,15 @@ public class User {
         this.userType = userType;
         this.description = description;
         this.friends = friends;
-        this.subscriptionID = subscriptionID;
+        this.subscriptionId = subscriptionId;
     }
 
     public User() {
 
     }
 
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public int getId() {
+        return userId;
     }
 
     public String getUsername() {
@@ -121,11 +117,11 @@ public class User {
         this.friends = friends;
     }
 
-    public int getSubscriptionID() {
-        return subscriptionID;
+    public int getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public void setSubscriptionID(int subscriptionID) {
-        this.subscriptionID = subscriptionID;
+    public void setSubscriptionId(int subscriptionId) {
+        this.subscriptionId = subscriptionId;
     }
 }
