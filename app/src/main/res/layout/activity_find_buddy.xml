@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#181818"
-    tools:context=".FindBuddyActivity">
+    tools:context=".activities.FindBuddyActivity">
 
     <Button
         android:id="@+id/findBuddyHomeBtn"
