@@ -1,6 +1,6 @@
 package com.example.studyhub.data;
 
-public class Users {
+public class User {
     private int userID;
     private String username;
     private String password;
@@ -14,7 +14,7 @@ public class Users {
     private String friends;
     private int subscriptionID;
 
-    public Users(int userID, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionID) {
+    public User(int userID, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionID) {
         this.userID = userID;
         this.username = username;
         this.password = password;
@@ -29,7 +29,7 @@ public class Users {
         this.subscriptionID = subscriptionID;
     }
 
-    public Users() {
+    public User() {
 
     }
 
