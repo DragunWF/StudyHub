@@ -1,6 +1,8 @@
 package com.example.studyhub.activities;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +13,18 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.studyhub.R;
 
 public class ViewOtherProfileActivity extends AppCompatActivity {
+    private ImageView backBtn;
+
+    private TextView usernameHeader;
+    private TextView description;
+
+    private TextView username;
+    private TextView fullName;
+
+    private TextView course;
+    private TextView accType;
+    private TextView email;
+    private TextView mobileNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +35,22 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        usernameHeader = findViewById(R.id.viewOthersUsernameHeader);
+        description = findViewById(R.id.viewOthersProfileDesc);
+
+        username = findViewById(R.id.outputViewOthersUsername);
+        fullName = findViewById(R.id.outputFindBuddyFullName);
+
+        course = findViewById(R.id.outputViewOthersCourse);
+        accType = findViewById(R.id.outputViewOthersAccType);
+        email = findViewById(R.id.outputViewOthersEmail);
+        mobileNumber = findViewById(R.id.outputViewOthersMobileNo);
+
+        backBtn = findViewById(R.id.viewOthersBackBtn);
+        backBtn.setOnClickListener(v -> {
+            finish();
         });
     }
 }

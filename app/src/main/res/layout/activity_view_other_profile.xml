@@ -159,7 +159,7 @@
                 app:srcCompat="@drawable/line_view_others_profile1" />
 
             <TextView
-                android:id="@+id/outputVIewOthersUsername"
+                android:id="@+id/outputViewOthersUsername"
                 android:layout_width="313dp"
                 android:layout_height="19dp"
                 android:fontFamily="@font/inria_reg"
