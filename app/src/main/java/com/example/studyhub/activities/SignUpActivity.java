@@ -14,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.MainActivity;
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
+import com.example.studyhub.data.User;
 import com.example.studyhub.utils.Utils;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -27,10 +29,12 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText email;
     private EditText mobileNumber;
 
+    private String userType;
     private RadioButton studentBtn;
     private RadioButton tutorBtn;
 
     private Button signUpBtn;
+    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public class SignUpActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        db = new DatabaseHelper(this);
 
         username = findViewById(R.id.signUpInputUsername);
         password = findViewById(R.id.signUpInputPassword);
@@ -59,6 +65,12 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpBtn.setOnClickListener(v -> {
             if (isInputValid()) {
+                db.addUser(new User(
+                        Utils.getString(username), Utils.getString(password),
+                        Utils.getString(firstName), Utils.getString(lastName),
+                        Utils.getString(course), Utils.getString(email),
+                        Utils.getString(mobileNumber), userType
+                ));
                 startActivity(new Intent(SignUpActivity.this, MainActivity.class));
             }
         });
