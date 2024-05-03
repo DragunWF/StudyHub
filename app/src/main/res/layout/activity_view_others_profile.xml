@@ -34,7 +34,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewOthersProfileDesc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/viewOthersContainer1"
@@ -249,8 +252,8 @@
                 android:id="@+id/studyBuddyLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="-100dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="0dp">
 
                 <ImageView
                     android:id="@+id/viewOthersStudyBuddyContainer"
@@ -330,14 +333,19 @@
 
                 <TextView
                     android:id="@+id/viewOthersUsernameHeader"
-                    android:layout_width="333dp"
+                    android:layout_width="350dp"
                     android:layout_height="58dp"
                     android:fontFamily="@font/inria_reg"
                     android:text="@string/username"
                     android:textColor="#FFFFFF"
                     android:textSize="48dp"
-                    tools:layout_editor_absoluteX="137dp"
-                    tools:layout_editor_absoluteY="35dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.721"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.033" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
