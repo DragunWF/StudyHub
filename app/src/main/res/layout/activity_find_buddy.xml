@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/prev_btn" />
 
     <ImageView
-        android:id="@+id/finfBuddyNextBtn"
+        android:id="@+id/findBuddyNextBtn"
         android:layout_width="137.5dp"
         android:layout_height="57.5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -202,7 +202,7 @@
         app:layout_constraintVertical_bias="0.649" />
 
     <TextView
-        android:id="@+id/outputFindBuddyFullname"
+        android:id="@+id/outputFindBuddyFullName"
         android:layout_width="313dp"
         android:layout_height="19dp"
         android:fontFamily="@font/inria_reg"
