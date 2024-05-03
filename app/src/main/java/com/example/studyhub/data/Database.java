@@ -53,9 +53,12 @@ public class Database extends SQLiteOpenHelper {
                                         , USER_TBL, USER_ID, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME
                                         , COURSE, EMAIL, MOBILE_NUMBER, USER_TYPE, DESCRIPTION_USER
                                         , FRIENDS, SUBSCRIPTION_ID_FK, SUBSCRIPTION_ID_FK, SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK);
+        String subscriptionData = String.format("INSERT INTO %s VALUES (1, 'Free'), (2, 'VIP'), (3, 'Premium')",
+                subscriptionTbl);
 
         db.execSQL(subscriptionTbl);
         db.execSQL(userTbl);
+        db.execSQL(subscriptionData);
         db.close();
     }
 
