@@ -42,6 +42,21 @@ public class User {
         this.subscriptionId = subscriptionId;
     }
 
+    public User(int userId, String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionId) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.course = course;
+        this.email = email;
+        this.mobileNumber = mobileNumber;
+        this.userType = userType;
+        this.description = description;
+        this.friends = friends;
+        this.subscriptionId = subscriptionId;
+    }
+
     public User() {
 
     }
