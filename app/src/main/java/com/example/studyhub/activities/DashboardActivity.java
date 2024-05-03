@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studyhub.R;
 import com.example.studyhub.data.User;
+import com.example.studyhub.utils.RecyclerDashboardUsers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +39,7 @@ public class DashboardActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager recyclerLayoutManager;
     private RecyclerView.Adapter recyclerAdapter;
-    private List<User> users;
+    private List<User> userList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,8 @@ public class DashboardActivity extends AppCompatActivity {
         recyclerLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(recyclerLayoutManager);
 
-        // recyclerAdapter =
+        recyclerAdapter = new RecyclerDashboardUsers(this, userList);
+        recyclerView.setAdapter(recyclerAdapter);
     }
 
     private void setSpinners() {
