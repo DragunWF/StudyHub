@@ -31,15 +31,17 @@ public class DashboardActivity extends AppCompatActivity {
     private Button findStudyBuddyBtn;
 
     private Spinner userTypeSpinner;
-    private List<String> userTypeChoices = Arrays.asList("Any", "Student", "Tutor");
+    private final List<String> userTypeChoices = Arrays.asList("Any", "Student", "Tutor");
 
     private Spinner courseSpinner;
-    private List<String> courseChoices = new ArrayList<>();
+    private final List<String> courseChoices = new ArrayList<>();
 
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager recyclerLayoutManager;
     private RecyclerView.Adapter recyclerAdapter;
-    private List<User> userList;
+
+    private final List<User> userList = new ArrayList<>();
+    private List<User> currentUserList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
