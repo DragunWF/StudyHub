@@ -91,7 +91,7 @@ public class RecyclerDashboardUsers extends RecyclerView.Adapter<RecyclerDashboa
         viewHolder.getAccType().setText("Acc. Type: " + user.getUserType());
         viewHolder.getViewProfileBtn().setOnClickListener(v -> {
             // Intent intent = new Intent(context, ViewProfileActivity.class);
-            // intent.putExtra("id", user.getId());
+            // intent.putExtra("id", user.getID());
             // context.startActivity(intent);
         });
     }
