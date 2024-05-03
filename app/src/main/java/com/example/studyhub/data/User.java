@@ -4,12 +4,15 @@ public class User {
     private int userId;
     private String username;
     private String password;
+
     private String firstName;
     private String lastName;
+
     private String course;
     private String email;
     private String mobileNumber;
     private String userType;
+
     private String description;
     private String friends;
     private int subscriptionId;
@@ -67,6 +70,10 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return String.format("Name: %s %s", getFirstName(), getLastName());
     }
 
     public String getCourse() {

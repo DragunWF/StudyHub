@@ -1,5 +1,6 @@
 package com.example.studyhub.activities;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,7 +56,6 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
         profileIcon = findViewById(R.id.profileIconDashboard);
-        searchBar = findViewById(R.id.searchBarDashboard);
         findStudyBuddyBtn = findViewById(R.id.findBuddyBtn);
 
         findStudyBuddyBtn.setOnClickListener(v -> {
@@ -65,8 +65,37 @@ public class DashboardActivity extends AppCompatActivity {
             // startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
         });
 
+        setSearchBar();
         setRecyclerView();
         setSpinners();
+    }
+
+    private void setUserData() {
+        // TODO: Add all user data to userList when DatabaseHelper method
+        // getting all the users is implemented
+    }
+
+    private void setSearchBar() {
+        searchBar = findViewById(R.id.searchBarDashboard);
+        searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                currentUserList.clear();
+                for (User user : userList) {
+                    if (user.getFullName().toLowerCase().contains(query.toLowerCase())) {
+                        currentUserList.add(user);
+                    }
+                }
+                recyclerAdapter.notifyDataSetChanged();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
     }
 
     private void setRecyclerView() {
@@ -97,9 +126,16 @@ public class DashboardActivity extends AppCompatActivity {
         courseSpinner.setAdapter(courseAdapter);
 
         userTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String course = userTypeChoices.get(position);
+                for (User user : userList) {
+                    if (user.getUserType().equals(course)) {
+                        currentUserList.add(user);
+                    }
+                }
+                recyclerAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -108,9 +144,16 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
         courseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String course = courseChoices.get(position);
+                for (User user : userList) {
+                    if (user.getCourse().equals(course)) {
+                        currentUserList.add(user);
+                    }
+                }
+                recyclerAdapter.notifyDataSetChanged();
             }
 
             @Override
