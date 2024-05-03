@@ -161,7 +161,7 @@
         app:srcCompat="@drawable/personal_details_icon" />
 
     <TextView
-        android:id="@+id/findBUddyPersonalDetailsText"
+        android:id="@+id/findBuddyPersonalDetailsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/inria_bold"

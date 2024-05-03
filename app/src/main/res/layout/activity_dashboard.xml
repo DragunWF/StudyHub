@@ -8,45 +8,17 @@
     android:background="#181818"
     tools:context=".activities.DashboardActivity">
 
-    <ImageView
-        android:id="@+id/profileIconDashboard"
-        android:layout_width="109dp"
-        android:layout_height="104dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/findBuddyBtn"
+        android:layout_width="70dp"
+        android:layout_height="63dp"
+        android:background="@drawable/find_buddy_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewDashboard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.019"
-        app:srcCompat="@drawable/profile_dashboard" />
-
-    <SearchView
-        android:id="@+id/searchBarDashboard"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:background="@drawable/search_container"
-        android:iconifiedByDefault="false"
-        android:searchIcon="@drawable/search_icon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
-
-    <Spinner
-        android:id="@+id/userTypeSpinner"
-        android:layout_width="113dp"
-        android:layout_height="48dp"
-        android:background="@drawable/spinner_course"
-        android:spinnerMode="dropdown"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.956" />
 
     <Spinner
         android:id="@+id/courseSpinner"
@@ -57,36 +29,60 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.067" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <SearchView
+        android:id="@+id/searchBarDashboard"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:background="@drawable/search_container"
+        android:iconifiedByDefault="false"
+        android:searchIcon="@drawable/search_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039">
 
-        <Button
-            android:id="@+id/findBuddyBtn"
-            android:layout_width="63dp"
-            android:layout_height="58dp"
-            android:background="@drawable/find_buddy_btn"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.954"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.981" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </SearchView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewDashboard"
-        android:layout_width="410dp"
-        android:layout_height="776dp"
+        android:layout_width="539dp"
+        android:layout_height="1042dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/userTypeSpinner"
+        android:layout_width="113dp"
+        android:layout_height="48dp"
+        android:background="@drawable/spinner_course"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <ImageView
+        android:id="@+id/profileIconDashboard"
+        android:layout_width="112dp"
+        android:layout_height="107dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.014"
+        app:srcCompat="@drawable/profile_dashboard" />
 </androidx.constraintlayout.widget.ConstraintLayout>
