@@ -11,6 +11,11 @@ public class Subscription {
         this.description = description;
     }
 
+    public Subscription(int subscriptionId, String name) {
+        this.subscriptionId = subscriptionId;
+        this.name = name;
+    }
+
     public Subscription() {
 
     }

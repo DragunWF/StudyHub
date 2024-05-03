@@ -2,10 +2,14 @@ package com.example.studyhub.data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -84,5 +88,103 @@ public class Database extends SQLiteOpenHelper {
         cv.put(USER_TYPE, user.getUserType());
 
         db.insert(USER_TBL, null, cv);
+    }
+
+    public void addSubscription(Subscription sub) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(SUBSCRIPTION_ID_PK, sub.getSubscriptionId());
+        cv.put(NAME, sub.getName());
+        cv.put(DESCRIPTION_SUB, sub.getDescription());
+
+        db.insert(SUBSCRIPTION_TBL, null, cv);
+    }
+
+    public List<User> getUser() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USER_TBL, null);
+        List<User> accounts = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                accounts.add(new User(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getString(9),
+                        cursor.getString(10),
+                        cursor.getInt(11)));
+            } while (cursor.moveToNext());
+        }
+
+        db.close();
+        cursor.close();
+        return accounts;
+    }
+
+    public List<Subscription> getSubscription() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + SUBSCRIPTION_TBL, null);
+        List<Subscription> subs = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+            do {
+                subs.add(new Subscription(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2)
+                ));
+            } while (cursor.moveToNext());
+        }
+
+        db.close();
+        cursor.close();
+        return subs;
+    }
+
+    public User getUserById(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USER_TBL + " WHERE " + USER_ID + " = " + id, null);
+
+        if (cursor.moveToFirst()) {
+            return new User(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getString(6),
+                    cursor.getString(7),
+                    cursor.getString(8),
+                    cursor.getString(9),
+                    cursor.getString(10),
+                    cursor.getInt(11));
+        }
+        db.close();
+        cursor.close();
+        return null;
+    }
+
+    public Subscription getSubscriptionById (int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + SUBSCRIPTION_TBL + " WHERE " + SUBSCRIPTION_ID_PK + " = " + id, null);
+
+        if (cursor.moveToFirst()) {
+            return new Subscription(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2));
+        }
+        db.close();
+        cursor.close();
+        return null;
     }
 }
