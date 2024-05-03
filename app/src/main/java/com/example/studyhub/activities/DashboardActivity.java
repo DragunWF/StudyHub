@@ -55,6 +55,8 @@ public class DashboardActivity extends AppCompatActivity {
             return insets;
         });
 
+        setUserData();
+
         profileIcon = findViewById(R.id.profileIconDashboard);
         findStudyBuddyBtn = findViewById(R.id.findBuddyBtn);
 
