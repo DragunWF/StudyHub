@@ -2,6 +2,7 @@ package com.example.studyhub.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studyhub.R;
+import com.example.studyhub.activities.ViewOtherProfileActivity;
 import com.example.studyhub.data.User;
 
 import java.util.List;
@@ -89,9 +91,9 @@ public class RecyclerDashboardUsers extends RecyclerView.Adapter<RecyclerDashboa
         viewHolder.getCourse().setText("Course: " + user.getCourse());
         viewHolder.getAccType().setText("Acc. Type: " + user.getUserType());
         viewHolder.getViewProfileBtn().setOnClickListener(v -> {
-            // Intent intent = new Intent(context, ViewProfileActivity.class);
-            // intent.putExtra("id", user.getID());
-            // context.startActivity(intent);
+            Intent intent = new Intent(context, ViewOtherProfileActivity.class);
+            intent.putExtra("id", user.getId());
+            context.startActivity(intent);
         });
     }
 
