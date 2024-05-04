@@ -13,7 +13,7 @@
         android:theme="@style/Theme.StudyHub"
         tools:targetApi="31">
         <activity
-            android:name=".RequestViewProfileActivity"
+            android:name=".activities.RequestViewProfileActivity"
             android:exported="false" />
         <activity
             android:name=".BuddyViewProfileActivity"
