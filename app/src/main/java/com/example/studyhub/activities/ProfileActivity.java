@@ -80,7 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(new Intent(ProfileActivity.this, BuddyListActivity.class));
         });
         editProfileBtn.setOnClickListener(v -> {
-            // startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class));
+            startActivity(new Intent(ProfileActivity.this, EditProfileActivity.class));
         });
         subscriptionBtn.setOnClickListener(v -> {
            // startActivity(new Intent(ProfileActivity.this, SubscriptionActivity.class));

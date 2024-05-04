@@ -1,6 +1,7 @@
 package com.example.studyhub.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -61,10 +62,10 @@ public class DashboardActivity extends AppCompatActivity {
         findStudyBuddyBtn = findViewById(R.id.findBuddyBtn);
 
         findStudyBuddyBtn.setOnClickListener(v -> {
-            // startActivity(new Intent(DashboardActivity.this, FindBuddyActivity.class));
+            startActivity(new Intent(DashboardActivity.this, FindBuddyActivity.class));
         });
         profileIcon.setOnClickListener(v -> {
-            // startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
+            startActivity(new Intent(DashboardActivity.this, ProfileActivity.class));
         });
 
         setSearchBar();
