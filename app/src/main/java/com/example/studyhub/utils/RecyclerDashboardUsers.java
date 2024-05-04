@@ -16,7 +16,6 @@ import com.example.studyhub.data.User;
 import java.util.List;
 
 public class RecyclerDashboardUsers extends RecyclerView.Adapter<RecyclerDashboardUsers.ViewHolder> {
-
     private List<User> userList;
     private Context context;
 
