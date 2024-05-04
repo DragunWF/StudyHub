@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#181818"
-    tools:context=".RequestListActivity">
+    tools:context=".activities.RequestListActivity">
     <Button
         android:id="@+id/requestListHomeBtn"
         android:layout_width="121.5dp"

@@ -13,13 +13,13 @@
         android:theme="@style/Theme.StudyHub"
         tools:targetApi="31">
         <activity
-            android:name=".BuddyViewProfileActivity"
+            android:name=".activities.BuddyViewProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".RequestListActivity"
+            android:name=".activities.RequestListActivity"
             android:exported="false" />
         <activity
-            android:name=".BuddyListActivity"
+            android:name=".activities.BuddyListActivity"
             android:exported="false" />
         <activity
             android:name=".activities.FindBuddyActivity"
