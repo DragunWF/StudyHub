@@ -20,11 +20,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.User;
 import com.example.studyhub.utils.RecyclerDashboardUsers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -42,7 +44,7 @@ public class DashboardActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager recyclerLayoutManager;
     private RecyclerView.Adapter recyclerAdapter;
 
-    private final List<User> userList = new ArrayList<>();
+    private List<User> userList;
     private List<User> currentUserList = new ArrayList<>();
 
     @Override
@@ -76,6 +78,9 @@ public class DashboardActivity extends AppCompatActivity {
     private void setUserData() {
         // TODO: Add all user data to userList when DatabaseHelper method
         // getting all the users is implemented
+        DatabaseHelper db = new DatabaseHelper(this);
+        userList = db.getUsers();
+        currentUserList.addAll(userList);
     }
 
     private void setSearchBar() {
