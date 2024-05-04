@@ -14,6 +14,7 @@ import com.example.studyhub.R;
 
 public class ViewOtherProfileActivity extends AppCompatActivity {
     private ImageView backBtn;
+    private ImageView addBuddyBtn;
 
     private TextView usernameHeader;
     private TextView description;
@@ -48,9 +49,18 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
         email = findViewById(R.id.outputViewOthersEmail);
         mobileNumber = findViewById(R.id.outputViewOthersMobileNo);
 
+        setButtons();
+    }
+
+    private void setButtons() {
         backBtn = findViewById(R.id.viewOthersBackBtn);
+        addBuddyBtn = findViewById(R.id.viewOthersAddBuddyBtn);
+
         backBtn.setOnClickListener(v -> {
             finish();
+        });
+        addBuddyBtn.setOnClickListener(v -> {
+           // TODO: Implement friend requests
         });
     }
 }

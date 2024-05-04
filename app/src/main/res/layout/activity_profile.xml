@@ -6,10 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#181818"
-    tools:context=".ProfileActivity">
+    tools:context=".activities.ProfileActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profileBackBtn"
         android:layout_width="77dp"
         android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -411,7 +411,7 @@
         app:layout_constraintVertical_bias="0.861" />
 
     <ImageView
-        android:id="@+id/subcriptionBtn"
+        android:id="@+id/subscriptionBtn"
         android:layout_width="125dp"
         android:layout_height="34dp"
         app:layout_constraintBottom_toBottomOf="parent"
