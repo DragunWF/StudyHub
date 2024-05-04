@@ -70,31 +70,31 @@ public class SignUpActivity extends AppCompatActivity {
         final int PASSWORD_CHAR_LIMIT = 8;
 
         // Forgive me father for I have sinned...
-        if (Utils.getString(username).isEmpty()) {
+        if (Utils.isEmpty(username)) {
             toast("Username cannot be empty!");
             return false;
         }
-        if (Utils.getString(password).length() < PASSWORD_CHAR_LIMIT) {
+        if (Utils.isEmpty(password).length() < PASSWORD_CHAR_LIMIT) {
             toast(String.format("Password must at least be %s characters", PASSWORD_CHAR_LIMIT));
             return false;
         }
-        if (Utils.getString(firstName).isEmpty()) {
+        if (Utils.isEmpty(firstName)) {
             toast("First name cannot be empty!");
             return false;
         }
-        if (Utils.getString(lastName).isEmpty()) {
+        if (Utils.isEmpty(lastName)) {
             toast("Last name cannot be empty");
             return false;
         }
-        if (Utils.getString(course).isEmpty()) {
+        if (Utils.isEmpty(course)) {
             toast("Course cannot be empty!");
             return false;
         }
-        if (Utils.getString(email).isEmpty()) {
+        if (Utils.isEmpty(email)) {
             toast("Email cannot be empty!");
             return false;
         }
-        if (Utils.getString(mobileNumber).isEmpty()) {
+        if (Utils.isEmpty(mobileNumber)) {
             toast("Mobile Number cannot be empty!");
             return false;
         }

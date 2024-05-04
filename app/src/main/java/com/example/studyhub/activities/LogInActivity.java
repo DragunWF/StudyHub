@@ -52,11 +52,11 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     private boolean isInputValid() {
-        if (Utils.getString(username).isEmpty()) {
+        if (Utils.isEmpty(username)) {
             toast("Username cannot be empty!");
             return false;
         }
-        if (Utils.getString(password).isEmpty()) {
+        if (Utils.isEmpty(password)) {
             toast("Password cannot be empty!");
             return false;
         }
