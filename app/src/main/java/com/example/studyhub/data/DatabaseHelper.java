@@ -85,6 +85,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(COURSE, user.getCourse());
         cv.put(EMAIL, user.getEmail());
         cv.put(MOBILE_NUMBER, user.getMobileNumber());
+        if (user.getDescription() != null) {
+            cv.put(DESCRIPTION_USER, user.getDescription());
+        }
+        if (user.getFriends() != null) {
+            cv.put(FRIENDS, user.getFriends());
+        }
         cv.put(USER_TYPE, user.getUserType());
 
         db.insert(USER_TBL, null, cv);
@@ -101,7 +107,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(SUBSCRIPTION_TBL, null, cv);
     }
 
-    public List<User> getUser() {
+    public List<User> getUsers() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + USER_TBL, null);
         List<User> accounts = new ArrayList<>();
@@ -129,7 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return accounts;
     }
 
-    public List<Subscription> getSubscription() {
+    public List<Subscription> getSubscriptions() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + SUBSCRIPTION_TBL, null);
         List<Subscription> subs = new ArrayList<>();
