@@ -13,20 +13,16 @@
         android:theme="@style/Theme.StudyHub"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-            android:name=".activities.BuddyViewProfileActivity"
-=======
             android:name=".RequestViewProfileActivity"
             android:exported="false" />
         <activity
             android:name=".BuddyViewProfileActivity"
->>>>>>> 4ff171782acc2fc101605b589ec8a697eb2138b3
             android:exported="false" />
         <activity
-            android:name=".activities.RequestListActivity"
+            android:name=".RequestListActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.BuddyListActivity"
+            android:name=".BuddyListActivity"
             android:exported="false" />
         <activity
             android:name=".activities.FindBuddyActivity"
