@@ -62,10 +62,10 @@
         app:layout_constraintVertical_bias="0.223" />
 
     <EditText
-        android:id="@+id/inputEditProfileFistname"
+        android:id="@+id/inputEditProfileFirstname"
         android:layout_width="342.5dp"
         android:layout_height="62dp"
-        android:background="@drawable/input_username"
+        android:background="@drawable/input_firstname"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +79,7 @@
         android:id="@+id/inputEditProfileLastname"
         android:layout_width="342.5dp"
         android:layout_height="62dp"
-        android:background="@drawable/input_firstname"
+        android:background="@drawable/input_lastname"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -147,7 +147,7 @@
         app:layout_constraintVertical_bias="0.653" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/editProfileSubmitBtn"
         android:layout_width="342.5dp"
         android:layout_height="52dp"
         android:background="@drawable/submit_now_btn"
