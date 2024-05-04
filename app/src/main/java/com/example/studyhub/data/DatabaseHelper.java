@@ -16,6 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //----------------------TABLE-NAMES-------------------------\\
     private final String USER_TBL = "user_tbl";
     private final String SUBSCRIPTION_TBL = "subscription_tbl";
+    private final String REQUEST_TBL = "request_tbl";
     //----------------------TABLE-NAMES-------------------------\\
 
     //----------------------USER-FIELDS-------------------------\\
@@ -39,6 +40,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private final String DESCRIPTION_SUB = "description";
     //--------------------SUBSCRIPTION-FIELDS-----------------------\\
 
+    //--------------------REQUEST-FIELDS-----------------------\\
+    private final String REQUEST_ID = "request_id";
+    private final String SENDER_ID = "sender_id";
+    private final String RECEIVER_ID = "receiver_id";
+    //--------------------REQUEST-FIELDS-----------------------\\
+
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, "study_hub.db", null, 1);
@@ -58,8 +65,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                         , COURSE, EMAIL, MOBILE_NUMBER, USER_TYPE, DESCRIPTION_USER
                                         , FRIENDS, SUBSCRIPTION_ID_FK, SUBSCRIPTION_ID_FK, SUBSCRIPTION_TBL, SUBSCRIPTION_ID_PK);
 
+        String requestTbl = String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL" +
+                                          ", %s INTEGER NOT NULL, %s INTEGER NOT NULL" +
+                                          ", FOREIGN KEY (%s) REFERENCES %s(%s)" +
+                                          ", FOREIGN KEY (%s) REFERENCES %s(%s))"
+                                           , REQUEST_TBL, REQUEST_ID, SENDER_ID, RECEIVER_ID
+                                           , SENDER_ID, USER_TBL, USER_ID
+                                           , RECEIVER_ID, USER_TBL, USER_ID);
+
         db.execSQL(subscriptionTbl);
         db.execSQL(userTbl);
+        db.execSQL(requestTbl);
         db.close();
     }
 
