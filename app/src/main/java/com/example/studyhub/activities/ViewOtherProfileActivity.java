@@ -1,5 +1,6 @@
 package com.example.studyhub.activities;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.User;
 
 public class ViewOtherProfileActivity extends AppCompatActivity {
     private ImageView backBtn;
@@ -27,6 +29,8 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
     private TextView email;
     private TextView mobileNumber;
 
+    private User viewedUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +42,13 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
             return insets;
         });
 
+        // TODO: Implement a way to get the viewed user
+
         usernameHeader = findViewById(R.id.viewOthersUsernameHeader);
         description = findViewById(R.id.viewOthersProfileDesc);
 
         username = findViewById(R.id.outputViewOthersUsername);
-        fullName = findViewById(R.id.outputFindBuddyFullName);
+        fullName = findViewById(R.id.outputViewOthersFullname);
 
         course = findViewById(R.id.outputViewOthersCourse);
         accType = findViewById(R.id.outputViewOthersAccType);
@@ -50,6 +56,7 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
         mobileNumber = findViewById(R.id.outputViewOthersMobileNo);
 
         setButtons();
+        setInfo();
     }
 
     private void setButtons() {
@@ -62,5 +69,21 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
         addBuddyBtn.setOnClickListener(v -> {
            // TODO: Implement friend requests
         });
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void setInfo() {
+        usernameHeader.setText(viewedUser.getUsername());
+        description.setText(viewedUser.getDescription());
+
+        username.setText("Username: " + viewedUser.getUsername());
+        fullName.setText("Full Name: " + viewedUser.getFullName());
+
+        course.setText("Course: " + viewedUser.getCourse());
+        accType.setText("Acc. Type: " + viewedUser.getUserType());
+        email.setText("Email: " + viewedUser.getEmail());
+        mobileNumber.setText("Mobile No: " + viewedUser.getMobileNumber());
+
+        // TODO: Implement buddy counting
     }
 }
