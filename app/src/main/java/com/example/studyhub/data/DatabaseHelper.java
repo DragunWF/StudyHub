@@ -187,4 +187,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return null;
     }
+
+    public void updatePassword(String currentPassword, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(PASSWORD, newPassword);
+
+        db.update(USER_TBL, cv, PASSWORD + " = ?", new String[]{currentPassword});
+
+        db.close();
+    }
+
+    public void updateInfo(String username, String firstName, String lastName, String course, String email, String mobileNumber, String description) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        if (!username.isEmpty()) {
+            cv.put(USERNAME, username);
+        }
+        if (!firstName.isEmpty()) {
+            cv.put(FIRST_NAME, firstName);
+        }
+        if (!lastName.isEmpty()) {
+            cv.put(LAST_NAME, lastName);
+        }
+        if (!course.isEmpty()) {
+            cv.put(COURSE, course);
+        }
+        if (!email.isEmpty()) {
+            cv.put(EMAIL, email);
+        }
+        if (!mobileNumber.isEmpty()) {
+            cv.put(MOBILE_NUMBER, mobileNumber);
+        }
+        if (!description.isEmpty()) {
+            cv.put(DESCRIPTION_USER, description);
+        }
+
+        db.update(USER_TBL, cv, USER_ID + " = " + SessionData.getCurrentUser().getId(), null);
+    }
 }
