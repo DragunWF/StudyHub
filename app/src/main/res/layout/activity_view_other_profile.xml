@@ -9,18 +9,6 @@
     tools:context=".activities.ViewOtherProfileActivity">
 
     <ImageView
-        android:id="@+id/viewOthersBackBtn"
-        android:layout_width="68dp"
-        android:layout_height="59dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031"
-        app:srcCompat="@drawable/back_btn" />
-
-    <ImageView
         android:id="@+id/viewOthersProfilePic"
         android:layout_width="260dp"
         android:layout_height="262dp"
@@ -333,18 +321,31 @@
 
                 <TextView
                     android:id="@+id/viewOthersUsernameHeader"
-                    android:layout_width="350dp"
-                    android:layout_height="58dp"
+                    android:layout_width="269dp"
+                    android:layout_height="64dp"
                     android:fontFamily="@font/inria_reg"
                     android:text="@string/username"
+                    android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="48dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.721"
+                    app:layout_constraintHorizontal_bias="0.502"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.033" />
+                    app:layout_constraintVertical_bias="0.034" />
+
+                <ImageView
+                    android:id="@+id/viewOthersBackBtn"
+                    android:layout_width="71dp"
+                    android:layout_height="61dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.138"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.036"
+                    app:srcCompat="@drawable/back_btn" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
