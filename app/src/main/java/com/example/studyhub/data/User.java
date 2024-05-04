@@ -1,5 +1,7 @@
 package com.example.studyhub.data;
 
+import com.example.studyhub.utils.Utils;
+
 public class User {
     private int userId;
     private String username;
@@ -17,6 +19,31 @@ public class User {
     private String friends;
     private int subscriptionId;
 
+    public User(String username, String fullName, String course, String description) throws Exception {
+        // Constructor to use when creating dummy data
+        String[] name = fullName.split(" ");
+        if (name.length < 2) {
+            throw new Exception("Full name must have two words separated with a space!");
+        }
+        if (username.length() > 10) {
+            throw new Exception("Username cannot have more than 10 characters!");
+        }
+
+        // Manual data
+        this.username = username;
+        this.firstName = name[0];
+        this.lastName = name[1];
+        this.course = course;
+        this.description = description;
+
+        // Automatic dummy data
+        this.password = "password";
+        this.mobileNumber = Utils.generateRandomPhoneNumber();
+        this.email = String.format("%s%s@gmail.com", name[0].toLowerCase(), name[1].toLowerCase());
+        this.userType = ((int)Math.floor(Math.random() * 10)) <= 1 ? "tutor" : "student";
+        this.subscriptionId = 1;
+    }
+
     public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType) {
         this.username = username;
         this.password = password;
@@ -26,6 +53,19 @@ public class User {
         this.email = email;
         this.mobileNumber = mobileNumber;
         this.userType = userType;
+    }
+
+    public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, int subscriptionId) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.course = course;
+        this.email = email;
+        this.mobileNumber = mobileNumber;
+        this.userType = userType;
+        this.description = description;
+        this.subscriptionId = subscriptionId;
     }
 
     public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionId) {
