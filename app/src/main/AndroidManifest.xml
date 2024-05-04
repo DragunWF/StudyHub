@@ -13,6 +13,9 @@
         android:theme="@style/Theme.StudyHub"
         tools:targetApi="31">
         <activity
+            android:name=".RequestViewProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".BuddyViewProfileActivity"
             android:exported="false" />
         <activity
