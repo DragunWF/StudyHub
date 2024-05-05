@@ -44,17 +44,6 @@ public class User {
         this.subscriptionId = 1;
     }
 
-    public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.course = course;
-        this.email = email;
-        this.mobileNumber = mobileNumber;
-        this.userType = userType;
-    }
-
     public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, int subscriptionId) {
         this.username = username;
         this.password = password;
@@ -97,10 +86,19 @@ public class User {
         this.subscriptionId = subscriptionId;
     }
 
-    public User() {
-
+    // Dynamic Getters
+    public String getFullName() {
+        return String.format("Name: %s %s", getFirstName(), getLastName());
     }
 
+    public int getBuddyCount() {
+        if (friends.isEmpty()) {
+            return 0;
+        }
+        return friends.split(",").length;
+    }
+
+    // Setters and Getters
     public int getId() {
         return userId;
     }
@@ -135,10 +133,6 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getFullName() {
-        return String.format("Name: %s %s", getFirstName(), getLastName());
     }
 
     public String getCourse() {
