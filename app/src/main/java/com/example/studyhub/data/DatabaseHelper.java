@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.studyhub.utils.Utils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,9 +75,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                            , SENDER_ID, USER_TBL, USER_ID
                                            , RECEIVER_ID, USER_TBL, USER_ID);
 
+
         db.execSQL(subscriptionTbl);
         db.execSQL(userTbl);
         db.execSQL(requestTbl);
+
+        try {
+            String userQuery = String.format("INSERT INTO %s(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)" +
+                            Utils.generateUserValuesQuery(new User[]{
+                                    new User("eriko123", "Eric Santos", "BSIT", "An aspiring IT Consultant"),
+                                    new User("elainery", "Elaine Plarisan", "BSN", "Looking for someone to teach me anaphy and physiology ;^("),
+                                    new User("randelll", "Randel Cruz", "BSCE", "Let's build our home together ;^)"),
+                                    new User("delambda", "Macaiyla Lacros", "BSEE", "lf study partner for a girly Nikola Tesla"),
+                                    new User("arnoners", "Arnon Sinahunon", "BSPsych", "Let us twist our minds together and learn more"),
+                            })
+                    , USER_TBL, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, COURSE, EMAIL, MOBILE_NUMBER
+                    , USER_TYPE, DESCRIPTION_USER, SUBSCRIPTION_ID_FK);
+            db.execSQL(userQuery);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
         db.close();
     }
 
