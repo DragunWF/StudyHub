@@ -88,9 +88,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                     new User("randelll", "Randel Cruz", "BSCE", "Let's build our home together ;^)"),
                                     new User("delambda", "Macaiyla Lacros", "BSEE", "lf study partner for a girly Nikola Tesla"),
                                     new User("arnoners", "Arnon Sinahunon", "BSPsych", "Let us twist our minds together and learn more"),
+                                    new User("eleneya", "Elaine Garcia", "BSArch", "Build and design, lf study mate sa sb"),
+                                    new User("shantidop", "Santino Morales", "BSME", "Future Iron Man lf future Pepper Potts"),
+                                    new User("leslies", "Leslie Anchovy", "BSArch", "Build on and design lf study mate sa sb"),
+                                    new User("lichon34", "Anita Maxwin", "BAPsych", "Let us talk about the art of emotions and learn"),
+                                    new User("randyyy", "Randy Ormoc", "BSPT", "Massage after study date <3"),
+                                    new User("loonzo", "Macaraig Dimagiba", "BSCS", "Dance with me on a million of algorithms"),
+                                    new User("suzana", "Susan Broses", "BSIT", "Let us create an infrastructure between our hearts"),
+                                    new User("ranchill", "Resketa Lastikman", "BSArch", "Gawa tayo bahay together yahhhh"),
+                                    new User("kloeyyy", "Chloe Martinez", "BSBio", "Study mate only not interested in dating"),
+                                    new User("janseena", "Ernin Salamanca", "BSBA", "Ambitious and Persistent"),
+                                    new User("lanaya", "Lani Maskilucha", "BSCpE", "Turuan nyo ko mag solder fls"),
+                                    new User("danya", "Dan Mojica", "BSTM", "Sabi ni mama kuha daw degree para may bayad ang paglipad, tama na ang greens"),
+                                    new User("tonton", "Antonio Desmond", "BSHM", "Dreaming to have my own coffee shop"),
+                                    new User("sandragon", "Sandra Gomez", "BSN", "LF study mate sa Manila library need help sa acads huhu"),
+                                    new User("zendeya", "Zen Santos", "BSMT", "Seaman on the making"),
+                                    new User("jonesbon", "Bonito Askardo", "BSA", "Di papataob kaka record ng account"),
+                                    new User("remysu", "Remlin Kelnis", "BSArch", "Plates with you"),
+                                    new User("andeng", "Malsita Konya", "BSTM", "Future FA lf study partner every weekend at discord"),
+                                    new User("loocian", "Lucero Kapangan", "BSME", "study date please, help me with calc"),
+                                    new User("jaclen", "Jacinto Len", "BSIS", "Ambition is the healthiest food"),
+                                    new User("donya", "Donnalyn Daniya", "BSCE", "Need ko po tutor sa strength of materials"),
+                                    new User("rin", "Renee Cordero", "BSIT", "Libre kita sb basta gawin mo Java ko"),
+                                    new User("denyark", "Dennis Noly", "BSBA", "Future trillionaire"),
+                                    new User("menzen", "Marco Menesses", "BSCpE", "Tech-savvy since one"),
+                                    new User("anikka", "Anisa Manalac", "BSN", "Need a break from studying, so let us do it together")
                             })
-                    , USER_TBL, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, COURSE, EMAIL, MOBILE_NUMBER
-                    , USER_TYPE, DESCRIPTION_USER, SUBSCRIPTION_ID_FK);
+                                        , USER_TBL, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, COURSE, EMAIL, MOBILE_NUMBER
+                                        , USER_TYPE, DESCRIPTION_USER, SUBSCRIPTION_ID_FK);
             db.execSQL(userQuery);
         } catch (Exception e) {
             throw new RuntimeException(e);
