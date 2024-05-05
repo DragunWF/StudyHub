@@ -43,6 +43,10 @@ public class LogInActivity extends AppCompatActivity {
         username = findViewById(R.id.inputUsername);
         password = findViewById(R.id.inputPassword);
 
+        setButtons();
+    }
+
+    private void setButtons() {
         loginBtn = findViewById(R.id.logInBtn);
         registerTextBtn = findViewById(R.id.notRegisteredText);
 
