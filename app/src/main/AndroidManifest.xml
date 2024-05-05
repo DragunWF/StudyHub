@@ -41,7 +41,7 @@
             android:name=".activities.LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.LandingPage"
+            android:name=".LandingPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

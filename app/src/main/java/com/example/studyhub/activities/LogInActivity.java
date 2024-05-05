@@ -12,7 +12,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.studyhub.MainActivity;
+import com.example.studyhub.LandingPageActivity;
 import com.example.studyhub.R;
 import com.example.studyhub.utils.Utils;
 
@@ -43,11 +43,11 @@ public class LogInActivity extends AppCompatActivity {
 
         loginBtn.setOnClickListener(v -> {
             if (isInputValid()) {
-                startActivity(new Intent(LogInActivity.this, MainActivity.class));
+                startActivity(new Intent(LogInActivity.this, LandingPageActivity.class));
             }
         });
         registerTextBtn.setOnClickListener(v -> {
-            startActivity(new Intent(LogInActivity.this, MainActivity.class));
+            startActivity(new Intent(LogInActivity.this, LandingPageActivity.class));
         });
     }
 

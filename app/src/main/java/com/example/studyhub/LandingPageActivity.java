@@ -1,17 +1,17 @@
-package com.example.studyhub.activities;
+package com.example.studyhub;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.studyhub.R;
+import com.example.studyhub.activities.LogInActivity;
+import com.example.studyhub.activities.SignUpActivity;
 
-public class LandingPage extends AppCompatActivity {
+public class LandingPageActivity extends AppCompatActivity {
     private Button loginBtn;
     private Button registerBtn;
 
@@ -25,10 +25,10 @@ public class LandingPage extends AppCompatActivity {
         registerBtn = findViewById(R.id.landingSignUpBtn);
 
         loginBtn.setOnClickListener(v -> {
-            startActivity(new Intent(LandingPage.this, LogInActivity.class));
+            startActivity(new Intent(LandingPageActivity.this, LogInActivity.class));
         });
         registerBtn.setOnClickListener(v -> {
-            startActivity(new Intent(LandingPage.this, SignUpActivity.class));
+            startActivity(new Intent(LandingPageActivity.this, SignUpActivity.class));
         });
     }
 }

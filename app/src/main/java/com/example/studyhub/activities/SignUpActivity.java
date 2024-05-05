@@ -12,10 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.studyhub.MainActivity;
+import com.example.studyhub.LandingPageActivity;
 import com.example.studyhub.R;
-import com.example.studyhub.data.DatabaseHelper;
-import com.example.studyhub.data.User;
 import com.example.studyhub.utils.Utils;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -61,7 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpBtn.setOnClickListener(v -> {
             if (isInputValid()) {
-                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                startActivity(new Intent(SignUpActivity.this, LandingPageActivity.class));
             }
         });
     }
@@ -74,7 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
             toast("Username cannot be empty!");
             return false;
         }
-        if (Utils.isEmpty(password).length() < PASSWORD_CHAR_LIMIT) {
+        if (Utils.getString(password).length() < PASSWORD_CHAR_LIMIT) {
             toast(String.format("Password must at least be %s characters", PASSWORD_CHAR_LIMIT));
             return false;
         }
