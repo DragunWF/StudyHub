@@ -14,7 +14,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.LandingPageActivity;
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
+import com.example.studyhub.data.SessionData;
+import com.example.studyhub.data.User;
 import com.example.studyhub.utils.Utils;
+
+import java.util.List;
 
 public class LogInActivity extends AppCompatActivity {
     private EditText username;
@@ -42,13 +47,30 @@ public class LogInActivity extends AppCompatActivity {
         registerTextBtn = findViewById(R.id.notRegisteredText);
 
         loginBtn.setOnClickListener(v -> {
-            if (isInputValid()) {
+            if (isInputValid() && logInUser()) {
                 startActivity(new Intent(LogInActivity.this, LandingPageActivity.class));
             }
         });
         registerTextBtn.setOnClickListener(v -> {
             startActivity(new Intent(LogInActivity.this, LandingPageActivity.class));
         });
+    }
+
+    private boolean logInUser() {
+        try {
+            List<User> users = new DatabaseHelper(this).getUsers();
+            String usernameStr = Utils.getString(username), passwordStr = Utils.getString(password);
+            toast("Invalid username or password, please make sure you typed in the correct credentials!");
+            for (User user : users) {
+                if (user.getUsername().equals(usernameStr) && user.getPassword().equals(passwordStr)) {
+                    SessionData.setCurrentUser(user);
+                    return true;
+                }
+            }
+        } catch (Exception error) {
+            toast("Something unexpected went wrong while trying to log in!");
+        }
+        return false;
     }
 
     private boolean isInputValid() {
