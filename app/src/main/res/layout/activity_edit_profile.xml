@@ -59,7 +59,8 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
+        app:layout_constraintVertical_bias="0.223"
+        />
 
     <EditText
         android:id="@+id/inputEditProfileFirstname"

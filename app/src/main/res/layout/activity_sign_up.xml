@@ -1,235 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/signupbase"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#181818"
-    android:clipToOutline="true" >
-
-    <View
-        android:id="@+id/SignUpContainter"
-        android:layout_width="wrap_content"
-        android:layout_height="734dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="119dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="61dp"
-        android:background="@drawable/login_form_cardcontainer" />
+    android:clipToOutline="true">
 
     <ImageView
         android:id="@+id/SignUpLogo"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="798dp"
+        android:layout_width="0dp"
+        android:layout_height="209dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="901dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/signup_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUpLogo">
 
         <ImageView
             android:id="@+id/regText"
             android:layout_width="276dp"
             android:layout_height="34dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.524"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.178"
             app:srcCompat="@drawable/reg_form_text" />
 
         <EditText
             android:id="@+id/signUpInputUsername"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
             android:background="@drawable/input_username"
+            android:layout_marginTop="30dp"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="text"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.242" />
+            app:layout_constraintTop_toBottomOf="@+id/regText" />
 
         <EditText
             android:id="@+id/signUpInputPassword"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_password"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="textPassword"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.307" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputUsername" />
 
         <EditText
             android:id="@+id/signUpInputFirstName"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_firstname"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="text"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.371" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputPassword" />
 
         <EditText
             android:id="@+id/signUpInputLastName"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_lastname"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="text"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.436" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputFirstName" />
 
         <EditText
             android:id="@+id/signUpInputCourse"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_course"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="text"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputLastName" />
 
         <EditText
             android:id="@+id/signUpInputEmail"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_email"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="textEmailAddress"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.563" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputCourse" />
 
         <EditText
             android:id="@+id/signUpInputMobileNo"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/input_mobile_no"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="phone"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.628" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputEmail" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/inria_bold"
             android:text="Account Type:"
             android:textColor="#000000"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.255"
+            app:layout_constraintHorizontal_bias="0.18"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.677" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpInputMobileNo" />
 
         <RadioButton
             android:id="@+id/rBtnStudent"
             android:layout_width="109dp"
             android:layout_height="48dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/r_btn"
             android:fontFamily="@font/inria_bold"
             android:text="STUDENT"
             android:textAlignment="textStart"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.188"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.733" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <RadioButton
             android:id="@+id/rBtnTutor"
             android:layout_width="109dp"
             android:layout_height="48dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/r_btn"
             android:fontFamily="@font/inria_bold"
             android:text="TUTOR"
             android:textAlignment="textStart"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.188"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.797" />
+            app:layout_constraintTop_toBottomOf="@+id/rBtnStudent" />
 
         <Button
             android:id="@+id/signUpBtn"
-            android:layout_width="267dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/login_btn"
             android:fontFamily="@font/inria_bold"
             android:text="SIGN UP"
             android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.513"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.881" />
+            app:layout_constraintTop_toBottomOf="@+id/rBtnTutor" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

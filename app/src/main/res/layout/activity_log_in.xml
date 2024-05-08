@@ -1,121 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/loginbase"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#181818"
-     >
+    android:background="#181818">
 
-    <View
-        android:id="@+id/logInCardContainter"
-        android:layout_width="wrap_content"
-        android:layout_height="507dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="187dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="220dp"
-        android:background="@drawable/login_form_cardcontainer" />
 
     <ImageView
         android:id="@+id/loginLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="183dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="731dp"
+        android:layout_width="0dp"
+        android:layout_height="258dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="684dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/login_form_cardcontainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginLogo">
 
         <ImageView
             android:id="@+id/loginProfile"
             android:layout_width="167dp"
-            android:layout_height="152dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="178dp"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.313"
             app:srcCompat="@drawable/profile" />
 
         <EditText
             android:id="@+id/inputUsername"
-            android:layout_width="268dp"
-            android:layout_height="48dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/input_username"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="text"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.486" />
+            app:layout_constraintTop_toBottomOf="@+id/loginProfile" />
 
         <EditText
             android:id="@+id/inputPassword"
-            android:layout_width="266dp"
-            android:layout_height="49dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/input_password"
             android:ems="10"
             android:fontFamily="@font/inria_light"
             android:forceHasOverlappingRendering="false"
             android:inputType="textPassword"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.554" />
+            app:layout_constraintTop_toBottomOf="@+id/inputUsername" />
 
         <Button
             android:id="@+id/logInBtn"
-            android:layout_width="267dp"
-            android:layout_height="54dp"
+            android:layout_width="342dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/login_btn"
             android:fontFamily="@font/inria_bold"
             android:text="LOG IN"
             android:textSize="21sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.652" />
+            app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
         <TextView
             android:id="@+id/notRegisteredText"
             android:layout_width="119dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/inria_light"
             android:gravity="top"
             android:text="Not registered yet?"
             android:textColor="#EE0909"
             android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.698" />
+            app:layout_constraintTop_toBottomOf="@+id/logInBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
