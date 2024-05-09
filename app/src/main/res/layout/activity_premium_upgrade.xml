@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181818"
+    tools:context=".PremiumUpgradeActivity">
+
+    <ImageView
+        android:id="@+id/premiumBackBtn"
+        android:layout_width="74.5dp"
+        android:layout_height="74.5dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toStartOf="@+id/premiumLogo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_btn" />
+
+    <ImageView
+        android:id="@+id/premiumLogo"
+        android:layout_width="222.5dp"
+        android:layout_height="200.5dp"
+        android:layout_marginEnd="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/premiumSubsContainer"
+        android:layout_width="444dp"
+        android:layout_height="314.5dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premiumLogo"
+        app:srcCompat="@drawable/premium_benifits_no_btn" />
+
+    <ImageView
+        android:id="@+id/premiumMonthly"
+        android:layout_width="204.5dp"
+        android:layout_height="175.5dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/premiumYearly"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premiumSubsContainer"
+        app:srcCompat="@drawable/premium_monthly_price" />
+
+    <ImageView
+        android:id="@+id/premiumYearly"
+        android:layout_width="204.5dp"
+        android:layout_height="175.5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="48dp"
+        android:src="@drawable/premium_yearly_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premiumSubsContainer" />
+
+    <ImageView
+        android:id="@+id/premiumPaymentContainer"
+        android:layout_width="444dp"
+        android:layout_height="244dp"
+        android:layout_marginTop="232dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premiumSubsContainer"
+        app:srcCompat="@drawable/vip_payment_container" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="141dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="@+id/premiumPaymentContainer"
+        app:layout_constraintEnd_toEndOf="@+id/premiumPaymentContainer"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="@+id/premiumPaymentContainer"
+        app:layout_constraintTop_toTopOf="@+id/premiumPaymentContainer"
+        app:layout_constraintVertical_bias="0.642">
+
+        <RadioButton
+            android:id="@+id/subsRBtnMonthly1"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/r_btn_payment"
+            android:fontFamily="@font/inria_reg"
+            android:text="Monthly"
+            android:textAlignment="gravity"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/subsRBtnYearly1"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/r_btn_payment"
+            android:fontFamily="@font/inria_reg"
+            android:text="Yearly"
+            android:textAlignment="gravity"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="141dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="@+id/premiumPaymentContainer"
+        app:layout_constraintEnd_toEndOf="@+id/premiumPaymentContainer"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="@+id/premiumPaymentContainer"
+        app:layout_constraintTop_toTopOf="@+id/premiumPaymentContainer"
+        app:layout_constraintVertical_bias="0.642">
+
+        <RadioButton
+            android:id="@+id/subsRBtnGcash1"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/r_btn_payment"
+            android:fontFamily="@font/inria_reg"
+            android:text="Gcash"
+            android:textAlignment="gravity"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/subsRBtnMaya1"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/r_btn_payment"
+            android:fontFamily="@font/inria_reg"
+            android:text="Maya"
+            android:textAlignment="gravity"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/subsRBtnCard1"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:background="@drawable/r_btn_payment"
+            android:fontFamily="@font/inria_reg"
+            android:text="Card"
+            android:textAlignment="gravity"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/subsPremiumBtn"
+        android:layout_width="444dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/subs_btn"
+        android:fontFamily="@font/inria_bold"
+        android:text="SUBSCRIBE NOW"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premiumPaymentContainer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
