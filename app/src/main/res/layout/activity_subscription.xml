@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181818"
+    tools:context=".SubscriptionActivity">
+
+    <ImageView
+        android:id="@+id/subsBackBtn"
+        android:layout_width="74.5dp"
+        android:layout_height="74.5dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toStartOf="@+id/subsLogo"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_btn" />
+
+    <ImageView
+        android:id="@+id/subsLogo"
+        android:layout_width="222.5dp"
+        android:layout_height="200.5dp"
+        android:layout_marginEnd="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/currentSubsContainer"
+        android:layout_width="444dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subsLogo"
+        app:srcCompat="@drawable/current_subs_containter" />
+
+    <TextView
+        android:id="@+id/displayCurrentSubs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inria_bold"
+        android:text="FREE"
+        android:textAlignment="center"
+        android:textColor="#181818"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="@+id/currentSubsContainer"
+        app:layout_constraintEnd_toEndOf="@+id/currentSubsContainer"
+        app:layout_constraintStart_toStartOf="@+id/currentSubsContainer"
+        app:layout_constraintTop_toTopOf="@+id/currentSubsContainer"
+        app:layout_constraintVertical_bias="0.752" />
+
+    <ImageView
+        android:id="@+id/subsVipContainer"
+        android:layout_width="444dp"
+        android:layout_height="261.5dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentSubsContainer"
+        app:srcCompat="@drawable/vip_benifits_with_btn" />
+
+    <Button
+        android:id="@+id/subsUpgradeVipBtn"
+        android:layout_width="133.5dp"
+        android:layout_height="48dp"
+        android:background="@drawable/upgrade_btn"
+        android:fontFamily="@font/inria_bold"
+        android:text="UPGRADE NOW"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/subsVipContainer"
+        app:layout_constraintEnd_toEndOf="@+id/subsVipContainer"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="@+id/subsVipContainer"
+        app:layout_constraintTop_toTopOf="@+id/subsVipContainer"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <ImageView
+        android:id="@+id/subsPremiumContainer"
+        android:layout_width="444dp"
+        android:layout_height="344dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subsVipContainer"
+        app:srcCompat="@drawable/premium_benifits_with_btn" />
+
+    <Button
+        android:id="@+id/subsUpgradePremiumBtn"
+        android:layout_width="133.5dp"
+        android:layout_height="48dp"
+        android:background="@drawable/upgrade_btn"
+        android:fontFamily="@font/inria_bold"
+        android:text="UPGRADE NOW"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/subsPremiumContainer"
+        app:layout_constraintEnd_toEndOf="@+id/subsPremiumContainer"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="@+id/subsPremiumContainer"
+        app:layout_constraintTop_toTopOf="@+id/subsPremiumContainer"
+        app:layout_constraintVertical_bias="0.959" />
+</androidx.constraintlayout.widget.ConstraintLayout>
