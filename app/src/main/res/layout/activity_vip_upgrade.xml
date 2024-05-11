@@ -114,7 +114,7 @@
         app:layout_constraintVertical_bias="0.642">
 
         <RadioButton
-            android:id="@+id/subsRBtnCcash"
+            android:id="@+id/subsRBtnGcash"
             android:layout_width="130dp"
             android:layout_height="48dp"
             android:layout_marginBottom="5dp"
