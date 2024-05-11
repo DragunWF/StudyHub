@@ -29,9 +29,12 @@ public class VipUpgradeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         monthlyRbtn = findViewById(R.id.subsRBtnMonthly);
         yearlyRbtn = findViewById(R.id.subsRBtnYearly);
         gcashRbtn = findViewById(R.id.subsRBtnGcash);
-
+        mayaRbtn = findViewById(R.id.subsRBtnMaya);
+        cardRbtn = findViewById(R.id.subsRBtnCard);
+        subscribeBtn = findViewById(R.id.subsVipBtn);
     }
 }
