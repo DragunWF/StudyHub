@@ -13,13 +13,13 @@
         android:theme="@style/Theme.StudyHub"
         tools:targetApi="31">
         <activity
-            android:name=".PremiumUpgradeActivity"
+            android:name=".activities.PremiumUpgradeActivity"
             android:exported="false" />
         <activity
-            android:name=".VipUpgradeActivity"
+            android:name=".activities.VipUpgradeActivity"
             android:exported="false" />
         <activity
-            android:name=".SubscriptionActivity"
+            android:name=".activities.SubscriptionActivity"
             android:exported="false" />
         <activity
             android:name=".activities.RequestViewProfileActivity"

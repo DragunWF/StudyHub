@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#181818"
-    tools:context=".SubscriptionActivity">
+    tools:context=".activities.SubscriptionActivity">
 
     <ImageView
         android:id="@+id/subsBackBtn"
