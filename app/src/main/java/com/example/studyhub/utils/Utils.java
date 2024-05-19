@@ -57,6 +57,10 @@ public class Utils {
         return query.toString();
     }
 
+    public static String getDescription(User user) {
+        return user.getDescription() != null ? user.getDescription() : "No description provided...";
+    }
+
     public static boolean isValidPassword(String password) {
         return password.length() >= 8; // Password character limit
     }

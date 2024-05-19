@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.studyhub.R;
 import com.example.studyhub.data.SessionData;
 import com.example.studyhub.data.User;
+import com.example.studyhub.utils.Utils;
 
 public class ProfileActivity extends AppCompatActivity {
     private ImageView backBtn;
@@ -90,7 +91,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     private void setInfo() {
-        description.setText(currentUser.getDescription());
+        description.setText(Utils.getDescription(currentUser));
 
         username.setText("Username: " + currentUser.getUsername());
         fullName.setText("Full Name: " + currentUser.getFullName());
