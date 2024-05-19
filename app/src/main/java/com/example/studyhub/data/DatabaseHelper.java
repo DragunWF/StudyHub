@@ -262,30 +262,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void updateInfo(String username, String firstName, String lastName, String course, String email, String mobileNumber, String description) {
+    public void updateUserInfo(UserUpdateInfo info) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        if (!username.isEmpty()) {
-            cv.put(USERNAME, username);
+        if (!info.getUsername().isEmpty()) {
+            cv.put(USERNAME, info.getUsername());
         }
-        if (!firstName.isEmpty()) {
-            cv.put(FIRST_NAME, firstName);
+        if (!info.getPassword().isEmpty()) {
+            cv.put(PASSWORD, info.getPassword());
         }
-        if (!lastName.isEmpty()) {
-            cv.put(LAST_NAME, lastName);
+        if (!info.getFirstName().isEmpty()) {
+            cv.put(FIRST_NAME, info.getFirstName());
         }
-        if (!course.isEmpty()) {
-            cv.put(COURSE, course);
+        if (!info.getLastName().isEmpty()) {
+            cv.put(LAST_NAME, info.getLastName());
         }
-        if (!email.isEmpty()) {
-            cv.put(EMAIL, email);
+        if (!info.getCourse().isEmpty()) {
+            cv.put(COURSE, info.getCourse());
         }
-        if (!mobileNumber.isEmpty()) {
-            cv.put(MOBILE_NUMBER, mobileNumber);
+        if (!info.getEmail().isEmpty()) {
+            cv.put(EMAIL, info.getEmail());
         }
-        if (!description.isEmpty()) {
-            cv.put(DESCRIPTION_USER, description);
+        if (!info.getMobileNumber().isEmpty()) {
+            cv.put(MOBILE_NUMBER, info.getMobileNumber());
+        }
+        if (!info.getDescription().isEmpty()) {
+            cv.put(DESCRIPTION_USER, info.getDescription());
         }
 
         db.update(USER_TBL, cv, USER_ID + " = " + SessionData.getCurrentUser().getId(), null);
