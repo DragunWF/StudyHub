@@ -81,11 +81,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(requestTbl);
 
         try {
-            String userQuery = String.format("INSERT INTO %s(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)" +
+            String userQuery = String.format("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) " +
                             Utils.generateUserValuesQuery(new User[]{
                                     new User("eriko123", "Eric Santos", "BSIT", "An aspiring IT Consultant"),
                                     new User("elainery", "Elaine Plarisan", "BSN", "Looking for someone to teach me anaphy and physiology ;^("),
-                                    new User("randelll", "Randel Cruz", "BSCE", "Let's build our home together ;^)"),
+                                    new User("randelll", "Randel Cruz", "BSCE", "Let''s build our home together ;^)"),
                                     new User("delambda", "Macaiyla Lacros", "BSEE", "lf study partner for a girly Nikola Tesla"),
                                     new User("arnoners", "Arnon Sinahunon", "BSPsych", "Let us twist our minds together and learn more"),
                                     new User("eleneya", "Elaine Garcia", "BSArch", "Build and design, lf study mate sa sb"),
@@ -120,8 +120,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-        db.close();
     }
 
     /*@Override
@@ -153,6 +151,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cv.put(FRIENDS, user.getFriends());
         }
         cv.put(USER_TYPE, user.getUserType());
+        cv.put(SUBSCRIPTION_ID_FK, user.getSubscriptionId());
 
         db.insert(USER_TBL, null, cv);
     }
@@ -191,7 +190,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-        db.close();
         cursor.close();
         return accounts;
     }
@@ -211,7 +209,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
-        db.close();
         cursor.close();
         return subs;
     }
@@ -250,7 +247,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     cursor.getString(1),
                     cursor.getString(2));
         }
-        db.close();
+
         cursor.close();
         return null;
     }
