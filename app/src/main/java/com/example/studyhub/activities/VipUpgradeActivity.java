@@ -1,5 +1,6 @@
 package com.example.studyhub.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.R;
+import com.example.studyhub.utils.Utils;
 
 public class VipUpgradeActivity extends AppCompatActivity {
     private Button subscribeBtn;
@@ -43,14 +45,10 @@ public class VipUpgradeActivity extends AppCompatActivity {
         subscribeBtn = findViewById(R.id.subsVipBtn);
         backBtn = findViewById(R.id.vipBackBtn);
 
-        setButtons();
-    }
-
-    private void setButtons() {
         backBtn.setOnClickListener(v -> finish());
         subscribeBtn.setOnClickListener(v -> {
-            // TODO: Implement data passing that shows a pop up that talks about your payment
-            // in the next activity
+            Utils.longToast(VipUpgradeActivity.this,"Details about paying your upgrade to a VIP account has been sent to your email!");
+            startActivity(new Intent(VipUpgradeActivity.this, DashboardActivity.class));
         });
     }
 }

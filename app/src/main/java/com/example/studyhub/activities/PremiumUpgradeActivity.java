@@ -1,5 +1,6 @@
 package com.example.studyhub.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.R;
+import com.example.studyhub.utils.Utils;
 
 public class PremiumUpgradeActivity extends AppCompatActivity {
     private ImageView backBtn;
@@ -47,7 +49,8 @@ public class PremiumUpgradeActivity extends AppCompatActivity {
 
         backBtn.setOnClickListener(v -> finish());
         subscribeBtn.setOnClickListener(v -> {
-            // TODO: Implement input validation
+            Utils.longToast(PremiumUpgradeActivity.this,"Details about paying your upgrade to a Premium account has been sent to your email!");
+            startActivity(new Intent(PremiumUpgradeActivity.this, DashboardActivity.class));
         });
     }
 }
