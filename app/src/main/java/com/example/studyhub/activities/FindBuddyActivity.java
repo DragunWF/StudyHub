@@ -1,5 +1,6 @@
 package com.example.studyhub.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -13,6 +14,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
+import com.example.studyhub.data.SessionData;
+import com.example.studyhub.data.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FindBuddyActivity extends AppCompatActivity {
     private Button homeBtn;
@@ -30,6 +37,9 @@ public class FindBuddyActivity extends AppCompatActivity {
     private TextView email;
     private TextView mobileNumber;
 
+    private List<User> selectedUsers = new ArrayList<>();
+    private int selectedUserIndex = 0;
+    private final int SELECTED_USERS_LIMIT = 15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +62,49 @@ public class FindBuddyActivity extends AppCompatActivity {
         email = findViewById(R.id.outputFindBuddyEmail);
         mobileNumber = findViewById(R.id.outputFindBuddyMobileNo);
 
+        setSelectedUsers();
         setButtons();
+        setUserData();
+    }
+
+    private void setSelectedUsers() {
+        List<User> users = new DatabaseHelper(this).getUsers();
+        List<Integer> availableUserIds = new ArrayList<>();
+        List<Integer> selectedUserIds = new ArrayList<>();
+
+        for (User user : users) {
+            if (user.getId() != SessionData.getCurrentUser().getId()) {
+                availableUserIds.add(user.getId());
+            }
+        }
+
+        while (selectedUserIds.size() < SELECTED_USERS_LIMIT) {
+            int randomIndex = (int)Math.floor(Math.random() * availableUserIds.size());
+            int selectedId = availableUserIds.get(randomIndex);
+            selectedUserIds.add(selectedId);
+            availableUserIds.remove(randomIndex);
+        }
+
+        for (User user : users) {
+            if (selectedUserIds.contains(user.getId())) {
+                selectedUsers.add(user);
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void setUserData() {
+        User user = selectedUsers.get(selectedUserIndex);
+
+        usernameHeader.setText(user.getUsername());
+        description.setText(user.getDescription());
+        username.setText("Username: " + user.getUsername());
+        fullName.setText("Full Name: " + user.getFullName());
+
+        course.setText("Course: " + user.getCourse());
+        accType.setText("Acc. Type: " + user.getUserType());
+        email.setText("Email: " + user.getEmail());
+        mobileNumber.setText("Mobile No: " + user.getMobileNumber());
     }
 
     private void setButtons() {
@@ -65,10 +117,18 @@ public class FindBuddyActivity extends AppCompatActivity {
             startActivity(new Intent(FindBuddyActivity.this, DashboardActivity.class));
         });
         nextBtn.setOnClickListener(v -> {
-            // TODO: Implement next selection
+            selectedUserIndex++;
+            if (selectedUserIndex >= selectedUsers.size()) {
+                selectedUserIndex = 0;
+            }
+            setUserData();
         });
         prevBtn.setOnClickListener(v -> {
-            // TODO: Implement previous selection
+            selectedUserIndex--;
+            if (selectedUserIndex < 0) {
+                selectedUserIndex = selectedUsers.size() - 1;
+            }
+            setUserData();
         });
         addBuddyBtn.setOnClickListener(v -> {
             // TODO: Implement add buddy functionality
