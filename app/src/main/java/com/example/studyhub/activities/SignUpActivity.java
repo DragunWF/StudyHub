@@ -45,6 +45,8 @@ public class SignUpActivity extends AppCompatActivity {
             return insets;
         });
 
+        DatabaseHelper db = new DatabaseHelper(this);
+
         username = findViewById(R.id.signUpInputUsername);
         password = findViewById(R.id.signUpInputPassword);
 
@@ -67,7 +69,7 @@ public class SignUpActivity extends AppCompatActivity {
                         Utils.getString(lastName), Utils.getString(course), Utils.getString(email),
                         Utils.getString(mobileNumber), userType
                 );
-                new DatabaseHelper(SignUpActivity.this).addUser(createdUser);
+                db.addUser(createdUser);
                 startActivity(new Intent(SignUpActivity.this, LandingPageActivity.class));
             }
         });
