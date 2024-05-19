@@ -17,6 +17,7 @@ import com.example.studyhub.R;
 import com.example.studyhub.data.User;
 import com.example.studyhub.utils.RecyclerUsers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RequestListActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class RequestListActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager recyclerLayoutManager;
     private RecyclerView.Adapter recyclerAdapter;
 
-    private List<User> userList;
+    private List<User> userRequests = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class RequestListActivity extends AppCompatActivity {
         recyclerLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(recyclerLayoutManager);
 
-        recyclerAdapter = new RecyclerUsers(this, userList);
+        recyclerAdapter = new RecyclerUsers(this, userRequests);
         recyclerView.setAdapter(recyclerAdapter);
     }
 
