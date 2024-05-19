@@ -14,6 +14,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.LandingPageActivity;
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
+import com.example.studyhub.data.User;
 import com.example.studyhub.utils.Utils;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -59,6 +61,13 @@ public class SignUpActivity extends AppCompatActivity {
 
         signUpBtn.setOnClickListener(v -> {
             if (isInputValid()) {
+                String userType = studentBtn.isChecked() ? "student" : "tutor";
+                User createdUser = new User(
+                        Utils.getString(username), Utils.getString(password), Utils.getString(firstName),
+                        Utils.getString(lastName), Utils.getString(course), Utils.getString(email),
+                        Utils.getString(mobileNumber), userType
+                );
+                new DatabaseHelper(SignUpActivity.this).addUser(createdUser);
                 startActivity(new Intent(SignUpActivity.this, LandingPageActivity.class));
             }
         });

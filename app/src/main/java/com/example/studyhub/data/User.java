@@ -44,7 +44,7 @@ public class User {
         this.subscriptionId = 1;
     }
 
-    public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, int subscriptionId) {
+    public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -53,8 +53,7 @@ public class User {
         this.email = email;
         this.mobileNumber = mobileNumber;
         this.userType = userType;
-        this.description = description;
-        this.subscriptionId = subscriptionId;
+        this.subscriptionId = 1;
     }
 
     public User(String username, String password, String firstName, String lastName, String course, String email, String mobileNumber, String userType, String description, String friends, int subscriptionId) {
