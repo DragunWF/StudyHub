@@ -64,13 +64,13 @@ public class LogInActivity extends AppCompatActivity {
         try {
             List<User> users = new DatabaseHelper(this).getUsers();
             String usernameStr = Utils.getString(username), passwordStr = Utils.getString(password);
-            toast("Invalid username or password, please make sure you typed in the correct credentials!");
             for (User user : users) {
                 if (user.getUsername().equals(usernameStr) && user.getPassword().equals(passwordStr)) {
                     SessionData.setCurrentUser(user);
                     return true;
                 }
             }
+            toast("Invalid username or password, please make sure you typed in the correct credentials!");
         } catch (Exception error) {
             toast("Something unexpected went wrong while trying to log in!");
         }
