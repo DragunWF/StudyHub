@@ -39,7 +39,7 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         info.put("username", findViewById(R.id.inputEditProfileUsername));
-        info.put("password", null); // TODO: add a password update field
+        // info.put("password", null); // TODO: add a password update field
         info.put("firstName", findViewById(R.id.inputEditProfileFirstname));
         info.put("lastName", findViewById(R.id.inputEditProfileLastname));
 

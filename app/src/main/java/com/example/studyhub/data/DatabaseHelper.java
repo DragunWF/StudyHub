@@ -266,28 +266,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        if (!info.getUsername().isEmpty()) {
+        if (info.getUsername() != null) {
             cv.put(USERNAME, info.getUsername());
         }
-        if (!info.getPassword().isEmpty()) {
+        if (info.getPassword() != null) {
             cv.put(PASSWORD, info.getPassword());
         }
-        if (!info.getFirstName().isEmpty()) {
+        if (info.getFirstName() != null) {
             cv.put(FIRST_NAME, info.getFirstName());
         }
-        if (!info.getLastName().isEmpty()) {
+        if (info.getLastName() != null) {
             cv.put(LAST_NAME, info.getLastName());
         }
-        if (!info.getCourse().isEmpty()) {
+        if (info.getCourse() != null) {
             cv.put(COURSE, info.getCourse());
         }
-        if (!info.getEmail().isEmpty()) {
+        if (info.getEmail() != null) {
             cv.put(EMAIL, info.getEmail());
         }
-        if (!info.getMobileNumber().isEmpty()) {
+        if (info.getMobileNumber() != null) {
             cv.put(MOBILE_NUMBER, info.getMobileNumber());
         }
-        if (!info.getDescription().isEmpty()) {
+        if (info.getDescription() != null) {
             cv.put(DESCRIPTION_USER, info.getDescription());
         }
 
