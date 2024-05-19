@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.User;
 
 public class ViewOtherProfileActivity extends AppCompatActivity {
@@ -42,10 +43,10 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
             return insets;
         });
 
-        // TODO: Implement a way to get the viewed user
+        viewedUser = new DatabaseHelper(this).getUserById(getIntent().getIntExtra("id", 1));
 
         usernameHeader = findViewById(R.id.viewOthersUsernameHeader);
-        description = findViewById(R.id.viewOthersProfileDesc);
+        description = findViewById(R.id.outputViewOthersProfileDesc);
 
         username = findViewById(R.id.outputViewOthersUsername);
         fullName = findViewById(R.id.outputViewOthersFullname);
