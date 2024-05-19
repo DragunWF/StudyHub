@@ -52,7 +52,7 @@ public class LogInActivity extends AppCompatActivity {
 
         loginBtn.setOnClickListener(v -> {
             if (isInputValid() && logInUser()) {
-                startActivity(new Intent(LogInActivity.this, LandingPageActivity.class));
+                startActivity(new Intent(LogInActivity.this, DashboardActivity.class));
             }
         });
         registerTextBtn.setOnClickListener(v -> {
