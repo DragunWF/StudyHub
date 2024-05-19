@@ -81,6 +81,11 @@ public class DashboardActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
         userList = db.getUsers();
         currentUserList.addAll(userList);
+
+        courseChoices.add("Any");
+        for (User user : userList) {
+            courseChoices.add(user.getCourse().toUpperCase());
+        }
     }
 
     private void setSearchBar() {
@@ -99,8 +104,14 @@ public class DashboardActivity extends AppCompatActivity {
                 return false;
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public boolean onQueryTextChange(String newText) {
+                if (newText.isEmpty()) {
+                    currentUserList.clear();
+                    currentUserList.addAll(userList);
+                    recyclerAdapter.notifyDataSetChanged();
+                }
                 return false;
             }
         });
@@ -113,7 +124,7 @@ public class DashboardActivity extends AppCompatActivity {
         recyclerLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(recyclerLayoutManager);
 
-        recyclerAdapter = new RecyclerDashboardUsers(this, userList);
+        recyclerAdapter = new RecyclerDashboardUsers(this, currentUserList);
         recyclerView.setAdapter(recyclerAdapter);
     }
 
@@ -137,10 +148,15 @@ public class DashboardActivity extends AppCompatActivity {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String course = userTypeChoices.get(position);
-                for (User user : userList) {
-                    if (user.getUserType().equals(course)) {
-                        currentUserList.add(user);
+                currentUserList.clear();
+                if (position == 0) {
+                    currentUserList.addAll(userList);
+                } else {
+                    String userType = userTypeChoices.get(position);
+                    for (User user : userList) {
+                        if (user.getUserType().equalsIgnoreCase(userType)) {
+                            currentUserList.add(user);
+                        }
                     }
                 }
                 recyclerAdapter.notifyDataSetChanged();
@@ -155,10 +171,15 @@ public class DashboardActivity extends AppCompatActivity {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String course = courseChoices.get(position);
-                for (User user : userList) {
-                    if (user.getCourse().equals(course)) {
-                        currentUserList.add(user);
+                currentUserList.clear();
+                if (position == 0) {
+                    currentUserList.addAll(userList);
+                } {
+                    String course = courseChoices.get(position);
+                    for (User user : userList) {
+                        if (user.getCourse().equalsIgnoreCase(course)) {
+                            currentUserList.add(user);
+                        }
                     }
                 }
                 recyclerAdapter.notifyDataSetChanged();
