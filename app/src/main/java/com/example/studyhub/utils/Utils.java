@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.studyhub.data.User;
+import com.example.studyhub.data.UserUpdateInfo;
 
 import java.util.HashMap;
 
@@ -54,6 +55,10 @@ public class Utils {
             query.append(row);
         }
         return query.toString();
+    }
+
+    public static boolean isValidPassword(String password) {
+        return password.length() >= 8; // Password character limit
     }
 
     @SuppressLint("SetTextI18n")
