@@ -210,6 +210,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
         cursor.close();
+
         return subs;
     }
 
@@ -235,6 +236,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         cursor.close();
         return null;
+    }
+
+    public List<Request> getRequest() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + REQUEST_TBL, null);
+        List<Request> requests = new ArrayList<>();
+        if (cursor.moveToFirst()) {
+            do {
+                requests.add(new Request(cursor.getInt(0),
+                                         cursor.getInt(1),
+                                         cursor.getInt(2)));
+            } while(cursor.moveToNext());
+        }
+        return requests;
     }
 
     public Subscription getSubscriptionById (int id) {
