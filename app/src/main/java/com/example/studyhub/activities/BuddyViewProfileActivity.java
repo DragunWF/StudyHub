@@ -58,9 +58,7 @@ public class BuddyViewProfileActivity extends AppCompatActivity {
         email = findViewById(R.id.outputBuddyViewProfileEmail);
         mobileNumber = findViewById(R.id.outputBuddyViewProfileMobileNo);
 
-        backBtn.setOnClickListener(v -> {
-            finish();
-        });
+        backBtn.setOnClickListener(v -> finish());
     }
 
     @SuppressLint("SetTextI18n")

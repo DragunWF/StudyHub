@@ -62,9 +62,7 @@ public class RequestListActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.requestListBackBtn);
         homeBtn = findViewById(R.id.requestListHomeBtn);
 
-        backBtn.setOnClickListener(v -> {
-            finish();
-        });
+        backBtn.setOnClickListener(v -> finish());
         homeBtn.setOnClickListener(v -> {
             startActivity(new Intent(RequestListActivity.this, DashboardActivity.class));
         });
