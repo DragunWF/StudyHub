@@ -238,7 +238,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public List<Request> getRequest() {
+    public List<Request> getRequests() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + REQUEST_TBL, null);
         List<Request> requests = new ArrayList<>();
@@ -252,7 +252,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return requests;
     }
 
-    public Subscription getSubscriptionById (int id) {
+    public boolean addRequest(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(SENDER_ID, SessionData.getCurrentUser().getId());
+        cv.put(RECEIVER_ID, id);
+        db.insert(REQUEST_TBL, null, cv);
+        return true;
+    }
+
+    public Subscription getSubscriptionById(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + SUBSCRIPTION_TBL + " WHERE " + SUBSCRIPTION_ID_PK + " = " + id, null);
 
