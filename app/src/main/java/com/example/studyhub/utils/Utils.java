@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.User;
 import com.example.studyhub.data.UserUpdateInfo;
 
@@ -59,6 +60,10 @@ public class Utils {
 
     public static String getDescription(User user) {
         return user.getDescription() != null ? user.getDescription() : "No description provided...";
+    }
+
+    public static boolean addBuddy(Context context, int receiverId) {
+        return new DatabaseHelper(context).addRequest(receiverId);
     }
 
     public static boolean isValidPassword(String password) {

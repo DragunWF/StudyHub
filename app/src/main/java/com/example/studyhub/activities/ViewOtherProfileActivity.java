@@ -32,6 +32,7 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
     private TextView mobileNumber;
 
     private User viewedUser;
+    private int viewedUserId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,8 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
             return insets;
         });
 
-        viewedUser = new DatabaseHelper(this).getUserById(getIntent().getIntExtra("id", 1));
+        viewedUserId = getIntent().getIntExtra("id", 1);
+        viewedUser = new DatabaseHelper(this).getUserById(viewedUserId);
 
         usernameHeader = findViewById(R.id.viewOthersUsernameHeader);
         description = findViewById(R.id.outputViewOthersProfileDesc);
@@ -69,7 +71,11 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
             finish();
         });
         addBuddyBtn.setOnClickListener(v -> {
-           // TODO: Implement friend requests
+            if (Utils.addBuddy(ViewOtherProfileActivity.this, viewedUserId)) {
+                toast(String.format("A buddy request has been sent to %s!", viewedUser.getUsername()));
+            } else {
+                toast(String.format("You've already sent a request to %s!", viewedUser.getUsername()));
+            }
         });
     }
 
@@ -87,5 +93,9 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
         mobileNumber.setText("Mobile No: " + viewedUser.getMobileNumber());
 
         // TODO: Implement buddy counting
+    }
+
+    private void toast(String message) {
+        Utils.toast(this, message);
     }
 }

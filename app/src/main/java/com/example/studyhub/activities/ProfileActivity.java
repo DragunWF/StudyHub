@@ -13,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.SessionData;
 import com.example.studyhub.data.User;
 import com.example.studyhub.utils.Utils;
@@ -100,6 +101,10 @@ public class ProfileActivity extends AppCompatActivity {
         accType.setText("Acc. Type: " + currentUser.getUserType());
         email.setText("Email: " + currentUser.getEmail());
         mobileNumber.setText("Mobile No: " + currentUser.getMobileNumber());
+
+        buddyCount.setText(
+                String.valueOf(new DatabaseHelper(this).getRequests(SessionData.getCurrentUser().getId()).size())
+        );
 
         // TODO: Implement buddy counting and account tier identification
     }

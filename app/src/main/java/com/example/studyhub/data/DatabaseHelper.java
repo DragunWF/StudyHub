@@ -238,9 +238,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return null;
     }
 
-    public List<Request> getRequests() {
+    public List<Request> getRequests(int senderId) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + REQUEST_TBL, null);
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM " + REQUEST_TBL + " WHERE " + SENDER_ID + " = ?",
+                new String[] { String.valueOf(senderId) }
+        );
         List<Request> requests = new ArrayList<>();
         if (cursor.moveToFirst()) {
             do {
@@ -252,11 +255,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return requests;
     }
 
-    public boolean addRequest(int id) {
+    public boolean isRequestExists(int receiverId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM " + REQUEST_TBL + " WHERE " + RECEIVER_ID + " = ?",
+                new String[] { String.valueOf(receiverId) }
+        );
+        return cursor.moveToFirst();
+    }
+
+    public boolean addRequest(int receiverId) {
         SQLiteDatabase db = this.getWritableDatabase();
+        if (isRequestExists(receiverId)) {
+            return false;
+        }
         ContentValues cv = new ContentValues();
         cv.put(SENDER_ID, SessionData.getCurrentUser().getId());
-        cv.put(RECEIVER_ID, id);
+        cv.put(RECEIVER_ID, receiverId);
         db.insert(REQUEST_TBL, null, cv);
         return true;
     }
