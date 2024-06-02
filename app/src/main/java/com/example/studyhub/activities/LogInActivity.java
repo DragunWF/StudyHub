@@ -55,7 +55,7 @@ public class LogInActivity extends AppCompatActivity {
             }
         });
         registerTextBtn.setOnClickListener(v -> {
-            startActivity(new Intent(LogInActivity.this, LandingPageActivity.class));
+            startActivity(new Intent(LogInActivity.this, SignUpActivity.class));
         });
     }
 
