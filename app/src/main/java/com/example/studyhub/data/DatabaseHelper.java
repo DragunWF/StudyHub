@@ -233,7 +233,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     cursor.getString(10),
                     cursor.getInt(11));
         }
-        db.close();
         cursor.close();
         return null;
     }
@@ -253,6 +252,37 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             } while(cursor.moveToNext());
         }
         return requests;
+    }
+
+    public List<User> getUserRequests(int senderId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        List<User> users = new ArrayList<>();
+        Cursor cursor = db.rawQuery(
+                "SELECT " + USER_TBL + ".* FROM " + USER_TBL +
+                        " JOIN " + REQUEST_TBL + " ON " + USER_TBL + "." + USER_ID + " = "
+                + REQUEST_TBL + "." + RECEIVER_ID, null
+        );
+
+        if (cursor.moveToFirst()) {
+            do {
+                users.add(new User(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getString(9),
+                        cursor.getString(10),
+                        cursor.getInt(11)));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return users;
     }
 
     public boolean isRequestExists(int receiverId) {

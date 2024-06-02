@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studyhub.R;
+import com.example.studyhub.data.DatabaseHelper;
+import com.example.studyhub.data.SessionData;
 import com.example.studyhub.data.User;
 import com.example.studyhub.utils.RecyclerUsers;
 
@@ -28,7 +30,7 @@ public class RequestListActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager recyclerLayoutManager;
     private RecyclerView.Adapter recyclerAdapter;
 
-    private List<User> userRequests = new ArrayList<>();
+    private List<User> userRequests;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class RequestListActivity extends AppCompatActivity {
             return insets;
         });
 
-        // TODO: Implement data retrieval to fill userList
+        userRequests = new DatabaseHelper(this).getUserRequests(SessionData.getCurrentUser().getId());
 
         setRecyclerView();
         setButtons();
