@@ -71,11 +71,7 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
             finish();
         });
         addBuddyBtn.setOnClickListener(v -> {
-            if (Utils.addBuddy(ViewOtherProfileActivity.this, viewedUserId)) {
-                toast(String.format("A buddy request has been sent to %s!", viewedUser.getUsername()));
-            } else {
-                toast(String.format("You've already sent a request to %s!", viewedUser.getUsername()));
-            }
+            Utils.addBuddy(ViewOtherProfileActivity.this, viewedUserId);
         });
     }
 

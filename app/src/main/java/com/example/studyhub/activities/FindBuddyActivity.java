@@ -17,6 +17,7 @@ import com.example.studyhub.R;
 import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.SessionData;
 import com.example.studyhub.data.User;
+import com.example.studyhub.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -131,7 +132,7 @@ public class FindBuddyActivity extends AppCompatActivity {
             setUserData();
         });
         addBuddyBtn.setOnClickListener(v -> {
-            // TODO: Implement add buddy functionality
+            Utils.addBuddy(FindBuddyActivity.this, selectedUsers.get(selectedUserIndex).getId());
         });
     }
 }

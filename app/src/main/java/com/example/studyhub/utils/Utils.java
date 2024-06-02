@@ -62,8 +62,12 @@ public class Utils {
         return user.getDescription() != null ? user.getDescription() : "No description provided...";
     }
 
-    public static boolean addBuddy(Context context, int receiverId) {
-        return new DatabaseHelper(context).addRequest(receiverId);
+    public static void addBuddy(Context context, int receiverId) {
+        if (new DatabaseHelper(context).addRequest(receiverId)) {
+            Utils.toast(context, "A buddy request has been sent!");
+        } else {
+            Utils.toast(context, "You've already sent a request to this user!");
+        }
     }
 
     public static boolean isValidPassword(String password) {
