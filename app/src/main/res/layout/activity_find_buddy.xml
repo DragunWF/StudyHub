@@ -56,7 +56,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.215"
-        app:srcCompat="@drawable/profile_dashboard" />
+        app:srcCompat="@drawable/profile" />
 
     <TextView
         android:id="@+id/findBuddyUsernameHeader"
