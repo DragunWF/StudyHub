@@ -74,7 +74,7 @@ public class RecyclerUsers extends RecyclerView.Adapter<RecyclerUsers.ViewHolder
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         User user = userList.get(position);
-        viewHolder.getName().setText("Name: " + user.getFullName());
+        viewHolder.getName().setText(user.getFullName());
         viewHolder.getViewProfileBtn().setOnClickListener(v -> {
             Intent intent = new Intent(context, ViewOtherProfileActivity.class);
             intent.putExtra("id", user.getId());
