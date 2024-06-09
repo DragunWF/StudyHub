@@ -58,12 +58,12 @@
         app:srcCompat="@drawable/profile_description_container" />
 
     <ImageView
-       android:id="@+id/requestViewProfileDescIcon"
+        android:id="@+id/requestViewProfileDescIcon"
         android:layout_width="52dp"
         android:layout_height="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.278"
+        app:layout_constraintHorizontal_bias="0.311"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.425"
