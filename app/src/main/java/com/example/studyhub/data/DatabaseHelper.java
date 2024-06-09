@@ -82,38 +82,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         try {
             String userQuery = String.format("INSERT INTO %s (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) " +
-                            Utils.generateUserValuesQuery(new User[]{
-                                    new User("eriko123", "Eric Santos", "BSIT", "An aspiring IT Consultant"),
-                                    new User("elainery", "Elaine Plarisan", "BSN", "Looking for someone to teach me anaphy and physiology ;^("),
-                                    new User("randelll", "Randel Cruz", "BSCE", "Let''s build our home together ;^)"),
-                                    new User("delambda", "Macaiyla Lacros", "BSEE", "lf study partner for a girly Nikola Tesla"),
-                                    new User("arnoners", "Arnon Sinahunon", "BSPsych", "Let us twist our minds together and learn more"),
-                                    new User("eleneya", "Elaine Garcia", "BSArch", "Build and design, lf study mate sa sb"),
-                                    new User("shantidop", "Santino Morales", "BSME", "Future Iron Man lf future Pepper Potts"),
-                                    new User("leslies", "Leslie Anchovy", "BSArch", "Build on and design lf study mate sa sb"),
-                                    new User("lichon34", "Anita Maxwin", "BAPsych", "Let us talk about the art of emotions and learn"),
-                                    new User("randyyy", "Randy Ormoc", "BSPT", "Massage after study date <3"),
-                                    new User("loonzo", "Macaraig Dimagiba", "BSCS", "Dance with me on a million of algorithms"),
-                                    new User("suzana", "Susan Broses", "BSIT", "Let us create an infrastructure between our hearts"),
-                                    new User("ranchill", "Resketa Lastikman", "BSArch", "Gawa tayo bahay together yahhhh"),
-                                    new User("kloeyyy", "Chloe Martinez", "BSBio", "Study mate only not interested in dating"),
-                                    new User("janseena", "Ernin Salamanca", "BSBA", "Ambitious and Persistent"),
-                                    new User("lanaya", "Lani Maskilucha", "BSCpE", "Turuan nyo ko mag solder fls"),
-                                    new User("danya", "Dan Mojica", "BSTM", "Sabi ni mama kuha daw degree para may bayad ang paglipad, tama na ang greens"),
-                                    new User("tonton", "Antonio Desmond", "BSHM", "Dreaming to have my own coffee shop"),
-                                    new User("sandragon", "Sandra Gomez", "BSN", "LF study mate sa Manila library need help sa acads huhu"),
-                                    new User("zendeya", "Zen Santos", "BSMT", "Seaman on the making"),
-                                    new User("jonesbon", "Bonito Askardo", "BSA", "Di papataob kaka record ng account"),
-                                    new User("remysu", "Remlin Kelnis", "BSArch", "Plates with you"),
-                                    new User("andeng", "Malsita Konya", "BSTM", "Future FA lf study partner every weekend at discord"),
-                                    new User("loocian", "Lucero Kapangan", "BSME", "study date please, help me with calc"),
-                                    new User("jaclen", "Jacinto Len", "BSIS", "Ambition is the healthiest food"),
-                                    new User("donya", "Donnalyn Daniya", "BSCE", "Need ko po tutor sa strength of materials"),
-                                    new User("rin", "Renee Cordero", "BSIT", "Libre kita sb basta gawin mo Java ko"),
-                                    new User("denyark", "Dennis Noly", "BSBA", "Future trillionaire"),
-                                    new User("menzen", "Marco Menesses", "BSCpE", "Tech-savvy since one"),
-                                    new User("anikka", "Anisa Manalac", "BSN", "Need a break from studying, so let us do it together")
-                            })
+                    Utils.generateUserValuesQuery(new User[]{
+                            new User("eriko123", "Eric Santos", "BSIT", "Aspiring IT Consultant"),
+                            new User("elainery", "Elaine Plarisan", "BSN", "Seeking guidance in Anatomy and Physiology"),
+                            new User("randelll", "Randel Cruz", "BSCE", "Collaborative Civil Engineer"),
+                            new User("delambda", "Macaiyla Lacros", "BSEE", "Looking for a study partner interested in Electrical Engineering"),
+                            new User("arnoners", "Arnon Sinahunon", "BSPsych", "Exploring psychological concepts together"),
+                            new User("eleneya", "Elaine Garcia", "BSArch", "Architectural design enthusiast seeking study mate"),
+                            new User("shantidop", "Santino Morales", "BSME", "Aspiring Mechanical Engineer"),
+                            new User("leslies", "Leslie Anchovy", "BSArch", "Passionate about architecture and design"),
+                            new User("lichon34", "Anita Maxwin", "BAPsych", "Discussing the art of emotions and learning"),
+                            new User("randyyy", "Randy Ormoc", "BSPT", "Physical Therapy student looking for study partners"),
+                            new User("loonzo", "Macaraig Dimagiba", "BSCS", "Exploring algorithms and programming together"),
+                            new User("suzana", "Susan Broses", "BSIT", "Building IT infrastructure and connections"),
+                            new User("ranchill", "Resketa Lastikman", "BSArch", "Architectural design collaboration"),
+                            new User("kloeyyy", "Chloe Martinez", "BSBio", "Study mate for biology subjects"),
+                            new User("janseena", "Ernin Salamanca", "BSBA", "Driven and ambitious business student"),
+                            new User("lanaya", "Lani Maskilucha", "BSCpE", "Learning Computer Engineering and soldering skills"),
+                            new User("danya", "Dan Mojica", "BSTM", "Aspiring Tourism Manager"),
+                            new User("tonton", "Antonio Desmond", "BSHM", "Dreaming of owning a coffee shop"),
+                            new User("sandragon", "Sandra Gomez", "BSN", "Seeking study partner for nursing studies"),
+                            new User("zendeya", "Zen Santos", "BSMT", "Future Maritime professional"),
+                            new User("jonesbon", "Bonito Askardo", "BSA", "Aspiring Accountant"),
+                            new User("remysu", "Remlin Kelnis", "BSArch", "Passionate about architectural design"),
+                            new User("andeng", "Malsita Konya", "BSTM", "Future Flight Attendant seeking study partner"),
+                            new User("loocian", "Lucero Kapangan", "BSME", "Looking for help with calculus and mechanical engineering studies"),
+                            new User("jaclen", "Jacinto Len", "BSIS", "Ambitious Information Systems student"),
+                            new User("donya", "Donnalyn Daniya", "BSCE", "Seeking tutor for Strength of Materials"),
+                            new User("rin", "Renee Cordero", "BSIT", "Java programming partner needed"),
+                            new User("denyark", "Dennis Noly", "BSBA", "Future business leader"),
+                            new User("menzen", "Marco Menesses", "BSCpE", "Enthusiastic about Computer Engineering"),
+                            new User("anikka", "Anisa Manalac", "BSN", "Seeking study partner to balance study and breaks")
+                    })
+
                                         , USER_TBL, USERNAME, PASSWORD, FIRST_NAME, LAST_NAME, COURSE, EMAIL, MOBILE_NUMBER
                                         , USER_TYPE, DESCRIPTION_USER, SUBSCRIPTION_ID_FK);
             db.execSQL(userQuery);
