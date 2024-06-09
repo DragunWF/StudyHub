@@ -63,12 +63,11 @@
         app:srcCompat="@drawable/buddy_list_line1" />
 
     <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/requestListRecyclerView"
-        android:layout_width="538dp"
-        android:layout_height="1015dp"
+        android:id="@+id/requestListRecyclerView"
+        android:layout_width="549dp"
+        android:layout_height="926dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
