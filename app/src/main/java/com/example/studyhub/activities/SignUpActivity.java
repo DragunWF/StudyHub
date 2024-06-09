@@ -70,7 +70,8 @@ public class SignUpActivity extends AppCompatActivity {
                         Utils.getString(mobileNumber), userType
                 );
                 db.addUser(createdUser);
-                startActivity(new Intent(SignUpActivity.this, LandingPageActivity.class));
+                Utils.longToast(SignUpActivity.this, "Details about linking your STI account has been sent to your email!");
+                startActivity(new Intent(SignUpActivity.this, LogInActivity.class));
             }
         });
     }
