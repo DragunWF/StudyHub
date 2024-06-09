@@ -61,6 +61,9 @@ public class SignUpActivity extends AppCompatActivity {
         tutorBtn = findViewById(R.id.rBtnTutor);
         signUpBtn = findViewById(R.id.signUpBtn);
 
+        tutorBtn.setOnClickListener(v -> studentBtn.setChecked(false));
+        studentBtn.setOnClickListener(v -> tutorBtn.setChecked(false));
+
         signUpBtn.setOnClickListener(v -> {
             if (isInputValid()) {
                 String userType = studentBtn.isChecked() ? "student" : "tutor";
