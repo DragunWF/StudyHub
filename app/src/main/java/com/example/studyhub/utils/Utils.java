@@ -10,7 +10,9 @@ import com.example.studyhub.data.DatabaseHelper;
 import com.example.studyhub.data.User;
 import com.example.studyhub.data.UserUpdateInfo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Utils {
     public static void toast(Context context, String message) {
@@ -68,6 +70,17 @@ public class Utils {
         } else {
             Utils.toast(context, "You've already sent a request to this user!");
         }
+    }
+
+    public static boolean isUsernameExists(Context context, String username) {
+        DatabaseHelper db = new DatabaseHelper(context);
+        List<User> users = db.getUsers();
+        for (User user : users) {
+            if (user.getUsername().equals(username)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean isValidPassword(String password) {

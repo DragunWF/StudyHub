@@ -87,6 +87,10 @@ public class SignUpActivity extends AppCompatActivity {
             toast("Username cannot be empty!");
             return false;
         }
+        if (Utils.isUsernameExists(this, Utils.getString(username))) {
+            toast("Username already exists!");
+            return false;
+        }
         if (Utils.getString(password).length() < PASSWORD_CHAR_LIMIT) {
             toast(String.format("Password must at least be %s characters", PASSWORD_CHAR_LIMIT));
             return false;
