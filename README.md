@@ -16,7 +16,7 @@ The _"Study Hub"_ app addresses the challenge faced by students seeking academic
 
 ### StudyHub Business Proposal PDF
 
-- [Link to StudyHub Business Proposal Paper](misc/StudyHub-BusinessProposal.pdf)
+- [Link to StudyHub Business Proposal](misc/StudyHub-BusinessProposal.pdf)
 
 ## Features
 
