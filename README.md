@@ -26,6 +26,7 @@ The _"Study Hub"_ app addresses the challenge faced by students seeking academic
 - Ability to send _"Buddy Request"_ which is the app's term for a friend request.
 - Profile page that displays the user's information.
 - Dashboard page with the ability to filter out users via their names based on the input typed inside the search box and the account type as well as the course chosen on the dropdown menu (See [Images](#images-of-the-mobile-app) for a visualization of the dashboard page).
+- Input validation on forms based pages.
 - Subscriptions with various payment options (Simulation).
 
 ## Images of the Mobile App
