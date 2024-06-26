@@ -24,48 +24,77 @@ The _"Study Hub"_ app addresses the challenge faced by students seeking academic
 
 ## Images of the Mobile App
 
+<style>
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container img {
+    margin: 5px;
+}
+</style>
+
 ### Landing Page
 
-<img src="images/LandingPage.png" alt="LandingPage.png" width="300"/>
+<div class="image-container">
+    <img src="images/LandingPage.png" alt="LandingPage.png" width="300"/>
+</div>
 
 ### Login and Registration Page
 
-<img src="images/LoginPage.png" alt="LoginPage.png" width="300"/>
-<img src="images/RegistrationPage.png" alt="RegistrationPage.png" width="300"/>
+<div class="image-container">
+    <img src="images/LoginPage.png" alt="LoginPage.png" width="300"/>
+    <img src="images/RegistrationPage.png" alt="RegistrationPage.png" width="300"/>
+</div>
 
 ### Dashboard Page
 
-<img src="images/DashboardPage.png" alt="DashboardPage.png" width="300"/>
-<img src="images/DashboardPage2.png" alt="DashboardPage2.png" width="300"/>
-<img src="images/DashboardPage3.png" alt="DashboardPage3.png" width="300"/>
-<img src="images/DashboardPage4.png" alt="DashboardPage4.png" width="300"/>
+<div class="image-container">
+    <img src="images/DashboardPage.png" alt="DashboardPage.png" width="300"/>
+    <img src="images/DashboardPage2.png" alt="DashboardPage2.png" width="300"/>
+    <img src="images/DashboardPage3.png" alt="DashboardPage3.png" width="300"/>
+    <img src="images/DashboardPage4.png" alt="DashboardPage4.png" width="300"/>
+</div>
 
 ### Profile Page
 
-<img src="images/ProfilePage.png" alt="ProfilePage.png" width="300"/>
-<img src="images/OtherProfilePage.png" alt="OtherProfilePage.png" width="300"/>
+<div class="image-container">
+    <img src="images/ProfilePage.png" alt="ProfilePage.png" width="300"/>
+    <img src="images/OtherProfilePage.png" alt="OtherProfilePage.png" width="300"/>
+</div>
 
 ### Edit Account Information Page
 
-<img src="images/EditAccountPage.png" alt="/EditAccountPage.png" width="300"/>
+<div class="image-container">
+    <img src="images/EditAccountPage.png" alt="/EditAccountPage.png" width="300"/>
+</div>
 
 ### Find Buddy Page
 
-<img src="images/FindBuddyPage.png" alt="FindBuddyPage.png" width="300"/>
-<img src="images/FindBuddyPage2.png" alt="FindBuddyPage2.png" width="300"/>
+<div class="image-container">
+    <img src="images/FindBuddyPage.png" alt="FindBuddyPage.png" width="300"/>
+    <img src="images/FindBuddyPage2.png" alt="FindBuddyPage2.png" width="300"/>
+</div>
 
 ### Study Buddy Request List
 
-<img src="images/RequestListPage.png" alt="RequestListPage.png" width="300"/>
+<div class="image-container">
+    <img src="images/RequestListPage.png" alt="RequestListPage.png" width="300"/>
+</div>
 
 ### Subscription Page
 
-<img src="images/SubscriptionPage.png" alt="SubscriptionPage.png" width="300"/>
+<div class="image-container">
+    <img src="images/SubscriptionPage.png" alt="SubscriptionPage.png" width="300"/>
+</div>
 
 ### Payment Pages
 
-<img src="images/PaymentPageVIP.png" alt="PaymentPageVIP.png" width="300"/>
-<img src="images/PaymentPagePremium.png" alt="PaymentPagePremium.png" width="300"/>
+<div class="image-container">
+    <img src="images/PaymentPageVIP.png" alt="PaymentPageVIP.png" width="300"/>
+    <img src="images/PaymentPagePremium.png" alt="PaymentPagePremium.png" width="300"/>
+</div>
 
 ## SQLite3 Entity Relationship Diagram
 
