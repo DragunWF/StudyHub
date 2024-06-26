@@ -87,7 +87,7 @@ public class User {
 
     // Dynamic Getters
     public String getFullName() {
-        return String.format("Name: %s %s", getFirstName(), getLastName());
+        return String.format("%s %s", getFirstName(), getLastName());
     }
 
     public int getBuddyCount() {
