@@ -26,45 +26,50 @@ The _"Study Hub"_ app addresses the challenge faced by students seeking academic
 
 ### Landing Page
 
-![](images/LandingPage.png)
+<img src="images/LandingPage.png" alt="LandingPage.png" width="300"/>
 
-### Login Page
+### Login and Registration Page
 
-![](images/LoginPage.png)
-
-### Registration Page
-
-![](images/RegistrationPage.png)
+<img src="images/LoginPage.png" alt="LoginPage.png" width="300"/>
+<img src="images/RegistrationPage.png" alt="RegistrationPage.png" width="300"/>
 
 ### Dashboard Page
 
-![](images/DashboardPage.png)
-![](images/DashboardPage2.png)
-![](images/DashboardPage3.png)
-![](images/DashboardPage4.png)
+<img src="images/DashboardPage.png" alt="DashboardPage.png" width="300"/>
+<img src="images/DashboardPage2.png" alt="DashboardPage2.png" width="300"/>
+<img src="images/DashboardPage3.png" alt="DashboardPage3.png" width="300"/>
+<img src="images/DashboardPage4.png" alt="DashboardPage4.png" width="300"/>
 
 ### Profile Page
 
-![](images/ProfilePage.png)
-![](images/OtherProfilePage.png)
+<img src="images/ProfilePage.png" alt="ProfilePage.png" width="300"/>
+<img src="images/OtherProfilePage.png" alt="OtherProfilePage.png" width="300"/>
+
+### Edit Account Information Page
+
+<img src="images/EditAccountPage.png" alt="/EditAccountPage.png" width="300"/>
 
 ### Find Buddy Page
 
-![](images/FindBuddyPage.png)
-![](images/FindBuddyPage2.png)
+<img src="images/FindBuddyPage.png" alt="FindBuddyPage.png" width="300"/>
+<img src="images/FindBuddyPage2.png" alt="FindBuddyPage2.png" width="300"/>
 
 ### Study Buddy Request List
 
-![](images/RequestListPage.png)
+<img src="images/RequestListPage.png" alt="RequestListPage.png" width="300"/>
 
 ### Subscription Page
 
-![](images/SubscriptionPage.png)
+<img src="images/SubscriptionPage.png" alt="SubscriptionPage.png" width="300"/>
 
 ### Payment Pages
 
-![](images/PaymentPageVIP.png)
-![](images/PaymentPagePremium.png)
+<img src="images/PaymentPageVIP.png" alt="PaymentPageVIP.png" width="300"/>
+<img src="images/PaymentPagePremium.png" alt="PaymentPagePremium.png" width="300"/>
+
+## SQLite3 Entity Relationship Diagram
+
+![](images/SQLite3-Database-Entity-Relationship-Diagram.JPG)
 
 ## Disclaimer
 
