@@ -1,0 +1,8 @@
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-container img {
+  margin: 5px;
+}
