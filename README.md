@@ -14,6 +14,10 @@ The _"Study Hub"_ app addresses the challenge faced by students seeking academic
 - [JasDevPH](https://github.com/JasDevPH) - **Front-End Developer, UI/UX Designer**
 - [n-ginan](https://github.com/n-ginan) - **Back-End Developer, Assistant**
 
+### StudyHub Business Proposal PDF
+
+- [Link to StudyHub Business Proposal Paper](misc/StudyHub-BusinessProposal.pdf)
+
 ## Features
 
 - User login/registration, password update, account info edit.
