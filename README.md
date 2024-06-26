@@ -1,5 +1,7 @@
 # StudyHub
 
+<link rel="stylesheet" type="text/css" href="misc/readme-styles.css"/>
+
 ## Description
 
 This is our final project is for one of our subjects in college, namely Technopreneurship. We presented this app in front of a board of panelists inside a classroom, and out of all the groups that presented for that subject, we managed to defend our product successfully and achieve top #1 in terms of score.
@@ -23,17 +25,6 @@ The _"Study Hub"_ app addresses the challenge faced by students seeking academic
 - Subscriptions with various payment options (Simulation).
 
 ## Images of the Mobile App
-
-<style>
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.image-container img {
-    margin: 5px;
-}
-</style>
 
 ### Landing Page
 
