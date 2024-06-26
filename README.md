@@ -4,7 +4,7 @@
 
 ## Description
 
-This is our final project is for one of our subjects in college, namely Technopreneurship. We presented this app in front of a board of panelists inside a classroom, and out of all the groups that presented for that subject, we managed to defend our product successfully and achieve top #1 in terms of score.
+This is our final project for one of our subjects in college, namely Technopreneurship. We presented this app in front of a board of panelists inside a classroom, and out of all the groups that presented for that subject, we managed to defend our product successfully and achieve top #1 in terms of score.
 
 The _"Study Hub"_ app addresses the challenge faced by students seeking academic goals and support while navigating the difficulty of their college journey. A lot of students are left with a gap in finding reliable study partners and tutors, and to the high achieving students that aren’t rewarded for the effort they provide to teach a fellow classmate. Not everyone can learn and produce output as fast and efficiently as others, and this has created an environment where students can easily get left behind in their studies, but sometimes all they need is a little help. Our solution bridges this gap by providing a platform that facilitates connections based on academic needs and goals.
 
